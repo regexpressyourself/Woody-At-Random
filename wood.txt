@@ -1,73 +1,73 @@
 id - film_name - release_date - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-1 - What's New Pussycat? - 1965 - genre - summary - 1 - 1 - 0 - runtime - female_lead - quote - image_location
-2 - What's Up, Tiger Lily? - 1966 - genre - summary - 1 - 1 - 1 - runtime - female_lead - quote - image_location
-3 - Casino Royale - 1967 - genre - summary - 0 - 1 - 0 - runtime - female_lead - quote - image_location
-4 - Don't Drink the Water - 1969 - genre - summary - 1 - 0 - 0 - runtime - female_lead - quote - image_location
-5 - Take the Money and Run - 1969 - genre - summary - 1 - 1 - 1 - runtime - female_lead - quote - image_location
-6 - Bananas - 1971 - genre - summary - 1 - 1 - 1 - runtime - female_lead - quote - image_location
-7 - Play It Again, Sam - 1972 - genre - summary - 1 - 1 - 0 - runtime - female_lead - quote - image_location
-8 - Everything You Always Wanted to Know About Sex* (*But Were Afraid to Ask) - 1972 - genre - summary - 1 - 1 - 1 - runtime - female_lead - quote - image_location
-9 - Sleeper - 1973 - genre - summary - 1 - 1 - 1 - runtime - female_lead - quote - image_location
-10 - Love and Death - 1975 - genre - summary - 1 - 1 - 1 - runtime - female_lead - quote - image_location
-11 - The Front - 1976 - genre - summary - 0 - 1 - 0 - runtime - female_lead - quote - image_location
-12 - Annie Hall - 1977 - genre - summary - 1 - 1 - 1 - runtime - female_lead - quote - image_location
-13 - Interiors - 1978 - genre - summary - 1 - 0 - 1 - runtime - female_lead - quote - image_location
-14 - Manhattan - 1979 - genre - summary - 1 - 1 - 1 - runtime - female_lead - quote - image_location
-15 - Stardust Memories - 1980 - genre - summary - 1 - 1 - 1 - runtime - female_lead - quote - image_location
+1 - What's New Pussycat? - 1965 - genre - summary - 1 - 1 - 0 - 108 - female_lead - quote - image_location
+2 - What's Up, Tiger Lily? - 1966 - genre - summary - 1 - 1 - 1 - 80 - female_lead - quote - image_location
+3 - Casino Royale - 1967 - genre - summary - 0 - 1 - 0 - 131 - female_lead - quote - image_location
+4 - Don't Drink the Water - 1969 - genre - summary - 1 - 0 - 0 - 100 - female_lead - quote - image_location
+5 - Take the Money and Run - 1969 - genre - summary - 1 - 1 - 1 - 85 - female_lead - quote - image_location
+6 - Bananas - 1971 - genre - summary - 1 - 1 - 1 - 82 - female_lead - quote - image_location
+7 - Play It Again, Sam - 1972 - genre - summary - 1 - 1 - 0 - 85 - female_lead - quote - image_location
+8 - Everything You Always Wanted to Know About Sex* (*But Were Afraid to Ask) - 1972 - genre - summary - 1 - 1 - 1 - 88 - female_lead - quote - image_location
+9 - Sleeper - 1973 - genre - summary - 1 - 1 - 1 - 88 - female_lead - quote - image_location
+10 - Love and Death - 1975 - genre - summary - 1 - 1 - 1 - 85 - female_lead - quote - image_location
+11 - The Front - 1976 - genre - summary - 0 - 1 - 0 - 95 - female_lead - quote - image_location
+12 - Annie Hall - 1977 - genre - summary - 1 - 1 - 1 - 93 - female_lead - quote - image_location
+13 - Interiors - 1978 - genre - summary - 1 - 0 - 1 - 99 - female_lead - quote - image_location
+14 - Manhattan - 1979 - genre - summary - 1 - 1 - 1 - 96 - female_lead - quote - image_location
+15 - Stardust Memories - 1980 - genre - summary - 1 - 1 - 1 - 88 - female_lead - quote - image_location
 16 - To Woody Allen, From Europe with Love - 1980 - genre - summary - 0 - 1 - 0 - runtime - female_lead - quote - image_location
-17 - A Midsummer Night's Sex Comedy - 1982 - genre - summary - 1 - 1 - 1 - runtime - female_lead - quote - image_location
-18 - Zelig - 1983 - genre - summary - 1 - 1 - 1 - runtime - female_lead - quote - image_location
-19 - Broadway Danny Rose - 1984 - genre - summary - 1 - 1 - 1 - runtime - female_lead - quote - image_location
-20 - The Purple Rose of Cairo - 1985  - genre - summary - 1 - 0 - 1 - runtime - female_lead - quote - image_location
+17 - A Midsummer Night's Sex Comedy - 1982 - genre - summary - 1 - 1 - 1 - 88 - female_lead - quote - image_location
+18 - Zelig - 1983 - genre - summary - 1 - 1 - 1 - 79 - female_lead - quote - image_location
+19 - Broadway Danny Rose - 1984 - genre - summary - 1 - 1 - 1 - 84 - female_lead - quote - image_location
+20 - The Purple Rose of Cairo - 1985  - genre - summary - 1 - 0 - 1 - 82 - female_lead - quote - image_location
 21 - 50 Years of Action! - 1986 - genre - summary - 0 - 1 - 0 - runtime - female_lead - quote - image_location
-22 - Meetin' WA - 1986 - genre - summary - 0 - 1 - 0 - runtime - female_lead - quote - image_location
-23 - Hannah and Her Sisters - 1986 - genre - summary - 1 - 1 - 1 - runtime - female_lead - quote - image_location
-24 - Radio Days - 1987 - genre - summary - 1 - 1 - 1 - runtime - female_lead - quote - image_location
-25 - September - 1987 - genre - summary - 1 - 0 - 1 - runtime - female_lead - quote - image_location
-26 - King Lear - 1987 - genre - summary - 0 - 1 - 0 - runtime - female_lead - quote - image_location
-27 - Another Woman - 1988 - genre - summary - 1 - 0 - 1 - runtime - female_lead - quote - image_location
-28 - New York Stories - 1989 - genre - summary - 1 - 1 - 1 - runtime - female_lead - quote - image_location
-29 - Crimes and Misdemeanors - 1989 - genre - summary - 1 - 1 - 1 - runtime - female_lead - quote - image_location
-30 - Alice - 1990 - genre - summary - 1 - 0 - 1 - runtime - female_lead - quote - image_location
-31 - Scenes from a Mall - 1991 - genre - summary - 0 - 1 - 0 - runtime - female_lead - quote - image_location
-32 - Shadows and Fog - 1991 - genre - summary - 1 - 1 - 1 - runtime - female_lead - quote - image_location
-33 - Husbands and Wives - 1992 - genre - summary - 1 - 1 - 1 - runtime - female_lead - quote - image_location
-34 - Manhattan Murder Mystery - 1993 - genre - summary - 1 - 1 - 1 - runtime - female_lead - quote - image_location
-35 - Bullets over Broadway - 1994 - genre - summary - 1 - 0 - 1 - runtime - female_lead - quote - image_location
-36 - Mighty Aphrodite - 1995  - genre - summary - 1 - 1 - 1 - runtime - female_lead - quote - image_location
-37 - Everyone Says I Love You - 1996 - genre - summary - 1 - 1 - 1 - runtime - female_lead - quote - image_location
-38 - Deconstructing Harry - 1997 - genre - summary - 1 - 1 - 1 - runtime - female_lead - quote - image_location
-39 - Wild Man Blue - 1997 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-40 - AFI's 100 Years...100 Movies - 1998 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-41 - Celebrity - 1998 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-42 - The Impostors - 1998 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-43 - Antz - 1998 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-44 - Sweet and Lowdown - 1999 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-45 - Company Man - 2000 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-46 - Small Time Crooks - 2000 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-47 - Light Keeps Me Company - 2000 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-48 - Picking Up the Pieces - 2000 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-49 - The Curse of the Jade Scorpion - 2001 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-50 - Stanley Kubrick: A Life in Pictures - 2001 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-51 - Hollywood Ending - 2002 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-52 - 100 Years of Hope & Humor - 2003 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-53 - Anything Else - 2003 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-54 - Charlie: The Life and Art of Charles Chaplin - 2003 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-55 - Melinda and Melinda - 2004 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-56 - The Ballad of Greenwich Village - 2005 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-57 - The Outsider - 2005 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-58 - Match Point - 2005 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-59 - Scoop - 2006 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-60 - Home - 2006 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-61 - Cassandra's Dream - 2007 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-62 - Vicky Cristina Barcelona - 2008 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-63 - Whatever Works - 2009 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-64 - You Will Meet a Tall Dark Stranger - 2010 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-65 - Midnight in Paris - 2011 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-66 - Paris Manhattan - 2012 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-67 - To Rome with Love - 2012 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-68 - Blue Jasmine - 2013 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-69 - Fading Gigolo - 2014 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-70 - Magic in the Moonlight - 2014 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-71 - Irrational Man - 2015 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
-72 - Untitled Woody Allen film - 2016 - genre - summary - wrote - acted - directed - runtime - female_lead - quote - image_location
+22 - Meetin' WA - 1986 - genre - summary - 0 - 1 - 0 - 26 - female_lead - quote - image_location
+23 - Hannah and Her Sisters - 1986 - genre - summary - 1 - 1 - 1 - 106 - female_lead - quote - image_location
+24 - Radio Days - 1987 - genre - summary - 1 - 1 - 1 - 85 - female_lead - quote - image_location
+25 - September - 1987 - genre - summary - 1 - 0 - 1 - 82 - female_lead - quote - image_location
+26 - King Lear - 1987 - genre - summary - 0 - 1 - 0 - 90 - female_lead - quote - image_location
+27 - Another Woman - 1988 - genre - summary - 1 - 0 - 1 - 84 - female_lead - quote - image_location
+28 - New York Stories - 1989 - genre - summary - 1 - 1 - 1 - 124 - female_lead - quote - image_location
+29 - Crimes and Misdemeanors - 1989 - genre - summary - 1 - 1 - 1 - 104 - female_lead - quote - image_location
+30 - Alice - 1990 - genre - summary - 1 - 0 - 1 - 102 - female_lead - quote - image_location
+31 - Scenes from a Mall - 1991 - genre - summary - 0 - 1 - 0 - 89 - female_lead - quote - image_location
+32 - Shadows and Fog - 1991 - genre - summary - 1 - 1 - 1 - 85 - female_lead - quote - image_location
+33 - Husbands and Wives - 1992 - genre - summary - 1 - 1 - 1 - 108 - female_lead - quote - image_location
+34 - Manhattan Murder Mystery - 1993 - genre - summary - 1 - 1 - 1 - 104 - female_lead - quote - image_location
+35 - Bullets over Broadway - 1994 - genre - summary - 1 - 0 - 1 - 98 - female_lead - quote - image_location
+36 - Mighty Aphrodite - 1995  - genre - summary - 1 - 1 - 1 - 95 - female_lead - quote - image_location
+37 - Everyone Says I Love You - 1996 - genre - summary - 1 - 1 - 1 - 101 - female_lead - quote - image_location
+38 - Deconstructing Harry - 1997 - genre - summary - 1 - 1 - 1 - 96 - female_lead - quote - image_location
+39 - Wild Man Blue - 1997 - genre - summary - 0 - 1 - 0 - 105 - female_lead - quote - image_location
+40 - AFI's 100 Years...100 Movies - 1998 - genre - summary - 0 - 1 - 0 - runtime - female_lead - quote - image_location
+41 - Celebrity - 1998 - genre - summary - 1 - 0 - 1 - 113 - female_lead - quote - image_location
+42 - The Impostors - 1998 - genre - summary - 0 - 1 - 0 - 101 - female_lead - quote - image_location
+43 - Antz - 1998 - genre - summary - 0 - 1 - 0 - 83 - female_lead - quote - image_location
+44 - Sweet and Lowdown - 1999 - genre - summary - 1 - 1 - 1 - 95 - female_lead - quote - image_location
+45 - Company Man - 2000 - genre - summary - 0 - 1 - 0 - 82 - female_lead - quote - image_location
+46 - Small Time Crooks - 2000 - genre - summary - 1 - 1 - 1 - 95 - female_lead - quote - image_location
+47 - Light Keeps Me Company - 2000 - genre - summary - 0 - 1 - 0 - runtime - female_lead - quote - image_location
+48 - Picking Up the Pieces - 2000 - genre - summary - 0 - 1 - 0 - 95 - female_lead - quote - image_location
+49 - The Curse of the Jade Scorpion - 2001 - genre - summary - 1 - 1 - 1 - 103 - female_lead - quote - image_location
+50 - Stanley Kubrick: A Life in Pictures - 2001 - genre - summary - 0 - 1 - 0 - 142 - female_lead - quote - image_location
+51 - Hollywood Ending - 2002 - genre - summary - 1 - 1 - 1 - 114 - female_lead - quote - image_location
+52 - 100 Years of Hope & Humor - 2003 - genre - summary - 0 - 1 - 0 - runtime - female_lead - quote - image_location
+53 - Anything Else - 2003 - genre - summary - 1 - 1 - 1 - 108 - female_lead - quote - image_location
+54 - Charlie: The Life and Art of Charles Chaplin - 2003 - genre - summary - 0 - 1 - 0 - 132 - female_lead - quote - image_location
+55 - Melinda and Melinda - 2004 - genre - summary - 1 - 0 - 1 - 99 - female_lead - quote - image_location
+56 - The Ballad of Greenwich Village - 2005 - genre - summary - 0 - 1 - 0 - runtime - female_lead - quote - image_location
+57 - The Outsider - 2005 - genre - summary - 0 - 1 - 0 - runtime - female_lead - quote - image_location
+58 - Match Point - 2005 - genre - summary - 1 - 0 - 1 - 124 - female_lead - quote - image_location
+59 - Scoop - 2006 - genre - summary - 1 - 1 - 1 - 96 - female_lead - quote - image_location
+60 - Home - 2006 - genre - summary - 0 - 1 - 0 - 70 - female_lead - quote - image_location
+61 - Cassandra's Dream - 2007 - genre - summary - 1 - 0 - 1 - 110 - female_lead - quote - image_location
+62 - Vicky Cristina Barcelona - 2008 - genre - summary - 1 - 0 - 1 - 97 - female_lead - quote - image_location
+63 - Whatever Works - 2009 - genre - summary - 1 - 0 - 1 - 92 - female_lead - quote - image_location
+64 - You Will Meet a Tall Dark Stranger - 2010 - genre - summary - 1 - 0 - 1 - runtime - female_lead - quote - image_location
+65 - Midnight in Paris - 2011 - genre - summary - 1 - 0 - 1 - runtime - female_lead - quote - image_location
+66 - Paris Manhattan - 2012 - genre - summary - 0 - 1 - 0 - runtime - female_lead - quote - image_location
+67 - To Rome with Love - 2012 - genre - summary - 1 - 1 - 1 - runtime - female_lead - quote - image_location
+68 - Blue Jasmine - 2013 - genre - summary - 1 - 0 - 1 - runtime - female_lead - quote - image_location
+69 - Fading Gigolo - 2014 - genre - summary - 0 - 1 - 0 - runtime - female_lead - quote - image_location
+70 - Magic in the Moonlight - 2014 - genre - summary - 1 - 0 - 1 - runtime - female_lead - quote - image_location
+71 - Irrational Man - 2015 - genre - summary - 1 - 0 - 1 - runtime - female_lead - quote - image_location
+72 - Untitled Woody Allen film - 2016 - genre - summary - 1 - 0 - 1 - runtime - female_lead - quote - image_location
