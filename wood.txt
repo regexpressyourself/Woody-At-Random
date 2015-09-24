@@ -62,12 +62,86 @@ id - film_name - release_date - genre - summary - wrote - acted - directed - run
 61 - Cassandra's Dream - 2007 - genre - summary - 1 - 0 - 1 - 110 - female_lead - quote - image_location
 62 - Vicky Cristina Barcelona - 2008 - genre - summary - 1 - 0 - 1 - 97 - female_lead - quote - image_location
 63 - Whatever Works - 2009 - genre - summary - 1 - 0 - 1 - 92 - female_lead - quote - image_location
-64 - You Will Meet a Tall Dark Stranger - 2010 - genre - summary - 1 - 0 - 1 - runtime - female_lead - quote - image_location
-65 - Midnight in Paris - 2011 - genre - summary - 1 - 0 - 1 - runtime - female_lead - quote - image_location
-66 - Paris Manhattan - 2012 - genre - summary - 0 - 1 - 0 - runtime - female_lead - quote - image_location
-67 - To Rome with Love - 2012 - genre - summary - 1 - 1 - 1 - runtime - female_lead - quote - image_location
-68 - Blue Jasmine - 2013 - genre - summary - 1 - 0 - 1 - runtime - female_lead - quote - image_location
-69 - Fading Gigolo - 2014 - genre - summary - 0 - 1 - 0 - runtime - female_lead - quote - image_location
-70 - Magic in the Moonlight - 2014 - genre - summary - 1 - 0 - 1 - runtime - female_lead - quote - image_location
-71 - Irrational Man - 2015 - genre - summary - 1 - 0 - 1 - runtime - female_lead - quote - image_location
-72 - Untitled Woody Allen film - 2016 - genre - summary - 1 - 0 - 1 - runtime - female_lead - quote - image_location
+64 - You Will Meet a Tall Dark Stranger - 2010 - genre - summary - 1 - 0 - 1 - 100 - female_lead - quote - image_location
+65 - Midnight in Paris - 2011 - genre - summary - 1 - 0 - 1 - 94 - female_lead - quote - image_location
+66 - Paris Manhattan - 2012 - genre - summary - 0 - 1 - 0 - 77 - female_lead - quote - image_location
+67 - To Rome with Love - 2012 - genre - summary - 1 - 1 - 1 - 112 - female_lead - quote - image_location
+68 - Blue Jasmine - 2013 - genre - summary - 1 - 0 - 1 - 99 - female_lead - quote - image_location
+69 - Fading Gigolo - 2014 - genre - summary - 0 - 1 - 0 - 90 - female_lead - quote - image_location
+70 - Magic in the Moonlight - 2014 - genre - summary - 1 - 0 - 1 - 97 - female_lead - quote - image_location
+71 - Irrational Man - 2015 - genre - summary - 1 - 0 - 1 - 95  - female_lead - quote - image_location
+72 - Untitled Woody Allen film - 2016 - genre - summary - 1 - 0 - 1 - 0 - female_lead - quote - image_location
+
+id 2 for reference when stuff gets deleted
+ 1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
