@@ -29,10 +29,21 @@
 
       <div class="cover-container">
 
+        <div class="masthead clearfix">
+          <div class="inner">
+            <a href="index.php"><h3 class="masthead-brand">Woody At Random</h3></a>
+            <nav>
+              <ul class="nav masthead-nav">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="recommend.php">Random Recommendation</a></li>
+                <li><a href="filmography.php">Filmography</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
 
         <div class="inner cover">
-          <h1 class="cover-heading">Welcome to <br />Woody at Random</h1>
-          <br />
+          <h1 class="cover-heading">Welcome to Woody at Random</h1>
           <p class="lead">So, you want to check out a Woody Allen film, but don't know where to start? </p>
           <p class="lead">Let me recommend one at random for you!</p>
           <p class="lead">
@@ -40,6 +51,11 @@
           </p>
         </div>
 
+        <div class="mastfoot">
+          <div class="inner">
+            <p>Copyright: Sam Messina</p>
+          </div>
+        </div>
 
       </div>
 

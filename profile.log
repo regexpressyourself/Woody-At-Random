@@ -1,0 +1,879 @@
+FUNCTION  251()
+Called 1 time
+Total time:   0.000011
+ Self time:   0.000011
+
+count  total (s)   self (s)
+    1              0.000011   call add(self._sections, ['|', a:0 ? a:1 : '%='])
+
+FUNCTION  <SNR>126_get_prev_group()
+Called 10 times
+Total time:   0.000309
+ Self time:   0.000309
+
+count  total (s)   self (s)
+   10              0.000057   let x = a:i - 1
+   12              0.000038   while x >= 0
+   11              0.000067     let group = a:sections[x][0]
+   11              0.000051     if group != '' && group != '|'
+    9              0.000025       return group
+                                endif
+    2              0.000008     let x = x - 1
+    2              0.000004   endwhile
+    1              0.000002   return ''
+
+FUNCTION  <SNR>117_exec_separator()
+Called 6 times
+Total time:   0.003705
+ Self time:   0.000457
+
+count  total (s)   self (s)
+    6   0.001525   0.000082   let l:from = airline#themes#get_highlight(a:from.a:suffix)
+    6   0.001441   0.000078   let l:to = airline#themes#get_highlight(a:to.a:suffix)
+    6              0.000043   let group = a:from.'_to_'.a:to.a:suffix
+    6              0.000017   if a:inverse
+    2              0.000020     let colors = [ l:from[1], l:to[1], l:from[3], l:to[3] ]
+    2              0.000003   else
+    4              0.000039     let colors = [ l:to[1], l:from[1], l:to[3], l:from[3] ]
+    4              0.000007   endif
+    6              0.000034   let a:dict[group] = colors
+    6   0.000520   0.000078   call airline#highlighter#exec(group, colors)
+
+FUNCTION  airline#themes#get_highlight()
+Called 12 times
+Total time:   0.002806
+ Self time:   0.000187
+
+count  total (s)   self (s)
+   12   0.002798   0.000179   return call('airline#highlighter#get_highlight', [a:group] + a:000)
+
+FUNCTION  <SNR>117_get_array()
+Called 22 times
+Total time:   0.000642
+ Self time:   0.000642
+
+count  total (s)   self (s)
+   22              0.000098   let fg = a:fg
+   22              0.000067   let bg = a:bg
+   22              0.000433   return has('gui_running') || (has("termtruecolor") && &guicolors == 1) ? [ fg, bg, '', '', join(a:opts, ',') ] : [ '', '', fg, bg, join(a:opts, ',') ]
+
+FUNCTION  <SNR>117_get_syn()
+Called 44 times
+Total time:   0.002710
+ Self time:   0.002710
+
+count  total (s)   self (s)
+                              " need to pass in mode, known to break on 7.3.547
+   44              0.000649   let mode = has('gui_running') || (has("termtruecolor") && &guicolors == 1) ? 'gui' : 'cterm'
+   44              0.000517   let color = synIDattr(synIDtrans(hlID(a:group)), a:what, mode)
+   44              0.000214   if empty(color) || color == -1
+                                let color = synIDattr(synIDtrans(hlID('Normal')), a:what, mode)
+                              endif
+   44              0.000172   if empty(color) || color == -1
+                                if has('gui_running') || (has("termtruecolor") && &guicolors == 1)
+                                  let color = a:what ==# 'fg' ? '#000000' : '#FFFFFF'
+                                else
+                                  let color = a:what ==# 'fg' ? 0 : 1
+                                endif
+                              endif
+   44              0.000098   return color
+
+FUNCTION  <SNR>20_GetTabId()
+Called 2 times
+Total time:   0.000044
+ Self time:   0.000044
+
+count  total (s)   self (s)
+    2              0.000020   let tabnr = a:0 ? a:1 : tabpagenr()
+                              " using gettabvar over t:eclim_tab_id because while autocmds are executing,
+                              " the tabpagenr() may return the correct tab number, but accessing
+                              " t:eclim_tab_id may return the value from the previously focused tab.
+    2              0.000015   return gettabvar(tabnr, 'eclim_tab_id')
+
+FUNCTION  <SNR>110_sync_active_winnr()
+Called 7 times
+Total time:   0.000130
+ Self time:   0.000130
+
+count  total (s)   self (s)
+    7              0.000079   if exists('#airline') && winnr() != s:active_winnr
+                                call airline#update_statusline()
+                              endif
+
+FUNCTION  airline#extensions#netrw#apply()
+Called 1 time
+Total time:   0.000049
+ Self time:   0.000049
+
+count  total (s)   self (s)
+    1              0.000014   if &ft == 'netrw'
+                                let spc = g:airline_symbols.space
+                            
+                                call a:1.add_section('airline_a', spc.'netrw'.spc)
+                                if exists('*airline#extensions#branch#get_head')
+                                  call a:1.add_section('airline_b', spc.'%{airline#extensions#branch#get_head()}'.spc)
+                                endif
+                                call a:1.add_section('airline_c', spc.'%f'.spc)
+                                call a:1.split()
+                                call a:1.add_section('airline_y', spc.'%{airline#extensions#netrw#sortstring()}'.spc)
+                                return 1
+                              endif
+
+FUNCTION  <SNR>126_get_seperator()
+Called 5 times
+Total time:   0.006212
+ Self time:   0.000161
+
+count  total (s)   self (s)
+    5   0.002606   0.000069   if s:should_change_group(a:prev_group, a:group)
+    5   0.003601   0.000087     return s:get_transitioned_seperator(a:self, a:prev_group, a:group, a:side)
+                              else
+                                return a:side ? a:self._context.left_alt_sep : a:self._context.right_alt_sep
+                              endif
+
+FUNCTION  <SNR>127_get_section()
+Called 8 times
+Total time:   0.000573
+ Self time:   0.000507
+
+count  total (s)   self (s)
+    8              0.000050   if has_key(s:section_truncate_width, a:key)
+    4              0.000027     if winwidth(a:winnr) < s:section_truncate_width[a:key]
+                                  return ''
+                                endif
+    4              0.000006   endif
+    8              0.000037   let spc = g:airline_symbols.space
+    8   0.000198   0.000132   let text = airline#util#getwinvar(a:winnr, 'airline_section_'.a:key, g:airline_section_{a:key})
+    8              0.000113   let [prefix, suffix] = [get(a:000, 0, '%('.spc), get(a:000, 1, spc.'%)')]
+    8              0.000065   return empty(text) ? '' : prefix.text.suffix
+
+FUNCTION  253()
+Called 7 times
+Total time:   0.000068
+ Self time:   0.000068
+
+count  total (s)   self (s)
+    7              0.000061   call add(self._sections, [a:group, a:contents])
+
+FUNCTION  <SNR>127_build_sections()
+Called 2 times
+Total time:   0.001125
+ Self time:   0.000219
+
+count  total (s)   self (s)
+    9              0.000029   for key in a:keys
+    7              0.000031     if key == 'warning' && !a:context.active
+                                  continue
+                                endif
+    7   0.000995   0.000089     call s:add_section(a:builder, a:context, key)
+    7              0.000011   endfor
+
+FUNCTION  <SNR>110_is_excluded_window()
+Called 1 time
+Total time:   0.000112
+ Self time:   0.000112
+
+count  total (s)   self (s)
+    1              0.000005   for matchft in g:airline_exclude_filetypes
+                                if matchft ==# &ft
+                                  return 1
+                                endif
+                              endfor
+                            
+    4              0.000011   for matchw in g:airline_exclude_filenames
+    3              0.000050     if matchstr(expand('%'), matchw) ==# matchw
+                                  return 1
+                                endif
+    3              0.000004   endfor
+                            
+    1              0.000004   if g:airline_exclude_preview && &previewwindow
+                                return 1
+                              endif
+                            
+    1              0.000002   return 0
+
+FUNCTION  airline#extensions#default#apply()
+Called 1 time
+Total time:   0.001354
+ Self time:   0.000133
+
+count  total (s)   self (s)
+    1              0.000006   let winnr = a:context.winnr
+    1              0.000004   let active = a:context.active
+                            
+    1   0.000030   0.000020   if airline#util#getwinvar(winnr, 'airline_render_left', active || (!active && !g:airline_inactive_collapse))
+    1   0.000516   0.000023     call s:build_sections(a:builder, a:context, s:layout[0])
+    1              0.000002   else
+                                let text = s:get_section(winnr, 'c')
+                                if empty(text)
+                                  let text = ' %f%m '
+                                endif
+                                call a:builder.add_section('airline_c'.(a:context.bufnr), text)
+                              endif
+                            
+    1   0.000105   0.000026   call a:builder.split(s:get_section(winnr, 'gutter', '', ''))
+                            
+    1   0.000018   0.000011   if airline#util#getwinvar(winnr, 'airline_render_right', 1)
+    1   0.000646   0.000014     call s:build_sections(a:builder, a:context, s:layout[1])
+    1              0.000002   endif
+                            
+    1              0.000001   return 1
+
+FUNCTION  <SNR>127_add_section()
+Called 7 times
+Total time:   0.000906
+ Self time:   0.000314
+
+count  total (s)   self (s)
+                                " i have no idea why the warning section needs special treatment, but it's
+                                " needed to prevent separators from showing up
+    7              0.000027     if a:key == 'warning'
+    1   0.000026   0.000016       call a:builder.add_raw('%(')
+    1              0.000002     endif
+    7   0.000721   0.000148     call a:builder.add_section('airline_'.a:key, s:get_section(a:context.winnr, a:key))
+    7              0.000026     if a:key == 'warning'
+    1   0.000016   0.000007       call a:builder.add_raw('%)')
+    1              0.000002     endif
+
+FUNCTION  airline#extensions#eclim#creat_line()
+Called 1 time
+Total time:   0.000023
+ Self time:   0.000023
+
+count  total (s)   self (s)
+    1              0.000004   if &filetype == "tree"
+                                let builder = a:1
+                                call builder.add_section('airline_a', ' Project ')
+                                call builder.add_section('airline_b', ' %f ')
+                                call builder.add_section('airline_c', '')
+                              return 1
+                              endif
+
+FUNCTION  airline#highlighter#add_separator()
+Called 6 times
+Total time:   0.003913
+ Self time:   0.000208
+
+count  total (s)   self (s)
+    6              0.000069   let s:separators[a:from.a:to] = [a:from, a:to, a:inverse]
+    6   0.003837   0.000132   call <sid>exec_separator({}, a:from, a:to, a:inverse, '')
+
+FUNCTION  airline#util#getwinvar()
+Called 10 times
+Total time:   0.000083
+ Self time:   0.000083
+
+count  total (s)   self (s)
+   10              0.000071     return getwinvar(a:winnr, a:key, a:def)
+
+FUNCTION  <SNR>56_invoke_funcrefs()
+Called 1 time
+Total time:   0.011391
+ Self time:   0.000103
+
+count  total (s)   self (s)
+    1   0.000073   0.000018   let builder = airline#builder#new(a:context)
+    1   0.001866   0.000029   let err = airline#util#exec_funcrefs(a:funcrefs + s:core_funcrefs, builder, a:context)
+    1              0.000003   if err == 1
+    1   0.009415   0.000019     let a:context.line = builder.build()
+    1              0.000008     let s:contexts[a:context.winnr] = a:context
+    1              0.000020     call setwinvar(a:context.winnr, '&statusline', '%!airline#statusline('.a:context.winnr.')')
+    1              0.000002   endif
+
+FUNCTION  <SNR>55_init()
+Called 1 time
+Total time:   0.000023
+ Self time:   0.000023
+
+count  total (s)   self (s)
+    1              0.000004   if s:airline_initialized
+    1              0.000016     return
+                              endif
+                              let s:airline_initialized = 1
+                            
+                              call airline#extensions#load()
+                              call airline#init#sections()
+                            
+                              let s:airline_theme_defined = exists('g:airline_theme')
+                              if s:airline_theme_defined || !airline#switch_matching_theme()
+                                let g:airline_theme = get(g:, 'airline_theme', 'dark')
+                                call airline#switch_theme(g:airline_theme)
+                              endif
+                            
+                              silent doautocmd User AirlineAfterInit
+
+FUNCTION  <SNR>71_Highlight_Matching_Pair()
+Called 7 times
+Total time:   0.005250
+ Self time:   0.005250
+
+count  total (s)   self (s)
+                              " Remove any previous match.
+    7              0.000063   if exists('w:paren_hl_on') && w:paren_hl_on
+    4              0.000034     silent! call matchdelete(3)
+    4              0.000018     let w:paren_hl_on = 0
+    4              0.000008   endif
+                            
+                              " Avoid that we remove the popup menu.
+                              " Return when there are no colors (looks like the cursor jumps).
+    7              0.000073   if pumvisible() || (&t_Co < 8 && !has("gui_running"))
+                                return
+                              endif
+                            
+                              " Get the character under the cursor and check if it's in 'matchpairs'.
+    7              0.000043   let c_lnum = line('.')
+    7              0.000039   let c_col = col('.')
+    7              0.000023   let before = 0
+                            
+    7              0.000051   let text = getline(c_lnum)
+    7              0.000060   let c = text[c_col - 1]
+    7              0.000285   let plist = split(&matchpairs, '.\zs[:,]')
+    7              0.000067   let i = index(plist, c)
+    7              0.000021   if i < 0
+                                " not found, in Insert mode try character before the cursor
+    4              0.000023     if c_col > 1 && (mode() == 'i' || mode() == 'R')
+                                  let before = 1
+                                  let c = text[c_col - 2]
+                                  let i = index(plist, c)
+                                endif
+    4              0.000009     if i < 0
+                                  " not found, nothing to do
+    4              0.000009       return
+                                endif
+                              endif
+                            
+                              " Figure out the arguments for searchpairpos().
+    3              0.000008   if i % 2 == 0
+    3              0.000013     let s_flags = 'nW'
+    3              0.000022     let c2 = plist[i + 1]
+    3              0.000006   else
+                                let s_flags = 'nbW'
+                                let c2 = c
+                                let c = plist[i - 1]
+                              endif
+    3              0.000009   if c == '['
+                                let c = '\['
+                                let c2 = '\]'
+                              endif
+                            
+                              " Find the match.  When it was just before the cursor move it there for a
+                              " moment.
+    3              0.000009   if before > 0
+                                let has_getcurpos = exists("*getcurpos")
+                                if has_getcurpos
+                                  " getcurpos() is more efficient but doesn't exist before 7.4.313.
+                                  let save_cursor = getcurpos()
+                                else
+                                  let save_cursor = winsaveview()
+                                endif
+                                call cursor(c_lnum, c_col - before)
+                              endif
+                            
+                              " Build an expression that detects whether the current cursor position is in
+                              " certain syntax types (string, comment, etc.), for use as searchpairpos()'s
+                              " skip argument.
+                              " We match "escape" for special items, such as lispEscapeSpecial.
+    3              0.000035   let s_skip = '!empty(filter(map(synstack(line("."), col(".")), ''synIDattr(v:val, "name")''), ' . '''v:val =~? "string\\|character\\|singlequote\\|escape\\|comment"''))'
+                              " If executing the expression determines that the cursor is currently in
+                              " one of the syntax types, then we want searchpairpos() to find the pair
+                              " within those syntax types (i.e., not skip).  Otherwise, the cursor is
+                              " outside of the syntax types and s_skip should keep its value so we skip any
+                              " matching pair inside the syntax types.
+    3              0.000948   execute 'if' s_skip '| let s_skip = 0 | endif'
+                            
+                              " Limit the search to lines visible in the window.
+    3              0.000034   let stoplinebottom = line('w$')
+    3              0.000022   let stoplinetop = line('w0')
+    3              0.000012   if i % 2 == 0
+    3              0.000015     let stopline = stoplinebottom
+    3              0.000006   else
+                                let stopline = stoplinetop
+                              endif
+                            
+                              " Limit the search time to 300 msec to avoid a hang on very long lines.
+                              " This fails when a timeout is not supported.
+    3              0.000024   if mode() == 'i' || mode() == 'R'
+                                let timeout = exists("b:matchparen_insert_timeout") ? b:matchparen_insert_timeout : g:matchparen_insert_timeout
+                              else
+    3              0.000032     let timeout = exists("b:matchparen_timeout") ? b:matchparen_timeout : g:matchparen_timeout
+    3              0.000008   endif
+    3              0.000011   try
+    3              0.002122     let [m_lnum, m_col] = searchpairpos(c, '', c2, s_flags, s_skip, stopline, timeout)
+    3              0.000024   catch /E118/
+                                " Can't use the timeout, restrict the stopline a bit more to avoid taking
+                                " a long time on closed folds and long lines.
+                                " The "viewable" variables give a range in which we can scroll while
+                                " keeping the cursor at the same position.
+                                " adjustedScrolloff accounts for very large numbers of scrolloff.
+                                let adjustedScrolloff = min([&scrolloff, (line('w$') - line('w0')) / 2])
+                                let bottom_viewable = min([line('$'), c_lnum + &lines - adjustedScrolloff - 2])
+                                let top_viewable = max([1, c_lnum-&lines+adjustedScrolloff + 2])
+                                " one of these stoplines will be adjusted below, but the current values are
+                                " minimal boundaries within the current window
+                                if i % 2 == 0
+                                  if has("byte_offset") && has("syntax_items") && &smc > 0
+                            	let stopbyte = min([line2byte("$"), line2byte(".") + col(".") + &smc * 2])
+                            	let stopline = min([bottom_viewable, byte2line(stopbyte)])
+                                  else
+                            	let stopline = min([bottom_viewable, c_lnum + 100])
+                                  endif
+                                  let stoplinebottom = stopline
+                                else
+                                  if has("byte_offset") && has("syntax_items") && &smc > 0
+                            	let stopbyte = max([1, line2byte(".") + col(".") - &smc * 2])
+                            	let stopline = max([top_viewable, byte2line(stopbyte)])
+                                  else
+                            	let stopline = max([top_viewable, c_lnum - 100])
+                                  endif
+                                  let stoplinetop = stopline
+                                endif
+                                let [m_lnum, m_col] = searchpairpos(c, '', c2, s_flags, s_skip, stopline)
+                              endtry
+                            
+    3              0.000009   if before > 0
+                                if has_getcurpos
+                                  call setpos('.', save_cursor)
+                                else
+                                  call winrestview(save_cursor)
+                                endif
+                              endif
+                            
+                              " If a match is found setup match highlighting.
+    3              0.000019   if m_lnum > 0 && m_lnum >= stoplinetop && m_lnum <= stoplinebottom 
+    3              0.000018     if exists('*matchaddpos')
+    3              0.000142       call matchaddpos('MatchParen', [[c_lnum, c_col - before], [m_lnum, m_col]], 10, 3)
+    3              0.000007     else
+                                  exe '3match MatchParen /\(\%' . c_lnum . 'l\%' . (c_col - before) . 'c\)\|\(\%' . m_lnum . 'l\%' . m_col . 'c\)/'
+                                endif
+    3              0.000012     let w:paren_hl_on = 1
+    3              0.000005   endif
+
+FUNCTION  airline#update_statusline()
+Called 1 time
+Total time:   0.011594
+ Self time:   0.000203
+
+count  total (s)   self (s)
+    1              0.000019   for nr in filter(range(1, winnr('$')), 'v:val != winnr()')
+                                if airline#util#getwinvar(nr, 'airline_disabled', 0)
+                                  continue
+                                endif
+                                call setwinvar(nr, 'airline_active', 0)
+                                let context = { 'winnr': nr, 'active': 0, 'bufnr': winbufnr(nr) }
+                                call s:invoke_funcrefs(context, s:inactive_funcrefs)
+                              endfor
+                            
+    1              0.000003   unlet! w:airline_render_left
+    1              0.000003   unlet! w:airline_render_right
+    9              0.000024   for section in s:sections
+    8              0.000049     unlet! w:airline_section_{section}
+    8              0.000011   endfor
+                            
+    1              0.000004   let w:airline_active = 1
+    1              0.000012   let context = { 'winnr': winnr(), 'active': 1, 'bufnr': winbufnr(winnr()) }
+    1   0.011423   0.000032   call s:invoke_funcrefs(context, g:airline_statusline_funcrefs)
+
+FUNCTION  airline#highlighter#exec()
+Called 6 times
+Total time:   0.000442
+ Self time:   0.000442
+
+count  total (s)   self (s)
+    6              0.000028   let colors = a:colors
+    6              0.000018   if s:is_win32term
+                                let colors[2] = s:gui2cui(get(colors, 0, ''), get(colors, 2, ''))
+                                let colors[3] = s:gui2cui(get(colors, 1, ''), get(colors, 3, ''))
+                              endif
+    6              0.000290   exec printf('hi %s %s %s %s %s %s %s %s', a:group, get(colors, 0, '') != '' ? 'guifg='.colors[0] : '', get(colors, 1, '') != '' ? 'guibg='.colors[1] : '', get(colors, 2, '') != '' ? 'ctermfg='.colors[2] : '', get(colors, 3, '') != '' ? 'ctermbg='.colors[3] : '', get(colors, 4, '') != '' ? 'gui='.colors[4] : '', get(colors, 4, '') != '' ? 'cterm='.colors[4] : '', get(colors, 4, '') != '' ? 'term='.colors[4] : '')
+
+FUNCTION  airline#util#exec_funcrefs()
+Called 1 time
+Total time:   0.001837
+ Self time:   0.000166
+
+count  total (s)   self (s)
+    5              0.000023     for Fn in a:list
+    5   0.001772   0.000101       let code = call(Fn, a:000)
+    5              0.000014       if code != 0
+    1              0.000002         return code
+                                  endif
+    4              0.000007     endfor
+                                return 0
+
+FUNCTION  <SNR>126_get_transitioned_seperator()
+Called 6 times
+Total time:   0.004216
+ Self time:   0.000303
+
+count  total (s)   self (s)
+    6              0.000028   let line = ''
+    6   0.004007   0.000094   call airline#highlighter#add_separator(a:prev_group, a:group, a:side)
+    6              0.000063   let line .= '%#'.a:prev_group.'_to_'.a:group.'#'
+    6              0.000052   let line .= a:side ? a:self._context.left_sep : a:self._context.right_sep
+    6              0.000035   let line .= '%#'.a:group.'#'
+    6              0.000019   return line
+
+FUNCTION  airline#extensions#quickfix#apply()
+Called 1 time
+Total time:   0.000024
+ Self time:   0.000024
+
+count  total (s)   self (s)
+    1              0.000007   if &buftype == 'quickfix'
+                                let w:airline_section_a = s:get_text()
+                                let w:airline_section_b = '%{get(w:, "quickfix_title", "")}'
+                                let w:airline_section_c = ''
+                                let w:airline_section_x = ''
+                              endif
+
+FUNCTION  <SNR>55_on_window_changed()
+Called 1 time
+Total time:   0.011679
+ Self time:   0.000062
+
+count  total (s)   self (s)
+    1              0.000026   if pumvisible()
+                                return
+                              endif
+    1   0.000038   0.000015   call s:init()
+    1   0.011609   0.000015   call airline#update_statusline()
+
+FUNCTION  254()
+Called 2 times
+Total time:   0.000019
+ Self time:   0.000019
+
+count  total (s)   self (s)
+    2              0.000016   call add(self._sections, ['', a:text])
+
+FUNCTION  255()
+Called 1 time
+Total time:   0.009396
+ Self time:   0.001268
+
+count  total (s)   self (s)
+    1              0.000004   let side = 1
+    1              0.000003   let line = ''
+    1              0.000004   let i = 0
+    1              0.000006   let length = len(self._sections)
+    1              0.000003   let split = 0
+                            
+   11              0.000032   while i < length
+   10              0.000058     let section = self._sections[i]
+   10              0.000051     let group = section[0]
+   10              0.000050     let contents = section[1]
+   10   0.000439   0.000130     let prev_group = s:get_prev_group(self._sections, i)
+                            
+   10              0.000029     if group == ''
+    2              0.000011       let line .= contents
+    2              0.000006     elseif group == '|'
+    1              0.000002       let side = 0
+    1              0.000006       let line .= contents
+    1              0.000003       let split = 1
+    1              0.000001     else
+    7              0.000019       if prev_group == ''
+    1              0.000007         let line .= '%#'.group.'#'
+    1              0.000002       elseif split
+    1   0.000720   0.000018         let line .= s:get_transitioned_seperator(self, prev_group, group, side)
+    1              0.000004         let split = 0
+    1              0.000002       else
+    5   0.006292   0.000080         let line .= s:get_seperator(self, prev_group, group, side)
+    5              0.000012       endif
+    7   0.001069   0.000164       let line .= s:get_accented_line(self, group, contents)
+    7              0.000015     endif
+                            
+   10              0.000049     let i = i + 1
+   10              0.000020   endwhile
+                            
+    1              0.000003   if !self._context.active
+                                let line = substitute(line, '%#.\{-}\ze#', '\0_inactive', 'g')
+                              endif
+    1              0.000003   return line
+
+FUNCTION  airline#extensions#apply()
+Called 1 time
+Total time:   0.000221
+ Self time:   0.000109
+
+count  total (s)   self (s)
+    1              0.000007   let s:active_winnr = winnr()
+                            
+    1   0.000132   0.000020   if s:is_excluded_window()
+                                return -1
+                              endif
+                            
+    1              0.000003   if &buftype == 'help'
+                                call airline#extensions#apply_left_override('Help', '%f')
+                                let w:airline_section_x = ''
+                                let w:airline_section_y = ''
+                                let w:airline_render_right = 1
+                              endif
+                            
+    1              0.000002   if &previewwindow
+                                let w:airline_section_a = 'Preview'
+                                let w:airline_section_b = ''
+                                let w:airline_section_c = bufname(winbufnr(winnr()))
+                              endif
+                            
+    1              0.000011   if has_key(s:filetype_overrides, &ft)
+                                let args = s:filetype_overrides[&ft]
+                                call airline#extensions#apply_left_override(args[0], args[1])
+                              endif
+                            
+    1              0.000007   for item in items(s:filetype_regex_overrides)
+                                if match(&ft, item[0]) >= 0
+                                  call airline#extensions#apply_left_override(item[1][0], item[1][1])
+                                endif
+                              endfor
+
+FUNCTION  eclim#util#ShowCurrentError()
+Called 7 times
+Total time:   0.001696
+ Self time:   0.000708
+
+count  total (s)   self (s)
+                              " Shows the error on the cursor line if one.
+    7              0.000164   if mode() != 'n' || expand('%') == ''
+                                return
+                              endif
+                            
+    7   0.001135   0.000147   let message = eclim#util#GetLineError(line('.'))
+    7              0.000028   if message != ''
+                                " remove any new lines
+                                let message = substitute(message, '\n', ' ', 'g')
+                                " convert tabs to spaces to ensure a consistent char to display length
+                                let message = substitute(message, '\t', '  ', 'g')
+                            
+                                call eclim#util#WideMessage('echo', message)
+                                let s:show_current_error_displaying = 1
+                              else
+                                " clear the message if one of our error messages was displaying
+    7              0.000032     if s:show_current_error_displaying
+                                  call eclim#util#WideMessage('echo', message)
+                                  let s:show_current_error_displaying = 0
+                                endif
+    7              0.000010   endif
+
+FUNCTION  eclim#common#buffers#TabLastOpenIn()
+Called 1 time
+Total time:   0.000213
+ Self time:   0.000169
+
+count  total (s)   self (s)
+    1              0.000028   if !buflisted('%')
+    1              0.000012     silent! unlet b:eclim_tab_id
+    1              0.000003   endif
+                            
+    1   0.000048   0.000020   if !s:GetTabId()
+                                call s:SetTabId()
+                              endif
+                            
+    1              0.000004   let tabnr = 1
+    1              0.000003   let other_tab = 0
+    1              0.000006   let bufnr = bufnr('%')
+    2              0.000012   while tabnr <= tabpagenr('$')
+    1              0.000009     if tabnr != tabpagenr() && eclim#util#ListContains(tabpagebuflist(tabnr), bufnr)
+                                  let other_tab = tabnr
+                                  break
+                                endif
+    1              0.000004     let tabnr += 1
+    1              0.000002   endwhile
+                            
+    1              0.000007   if !exists('b:eclim_tab_id') || !other_tab
+    1   0.000030   0.000014     let b:eclim_tab_id = s:GetTabId()
+    1              0.000002   endif
+
+FUNCTION  airline#highlighter#get_highlight()
+Called 22 times
+Total time:   0.004859
+ Self time:   0.001507
+
+count  total (s)   self (s)
+   22   0.001639   0.000240   let fg = s:get_syn(a:group, 'fg')
+   22   0.001555   0.000244   let bg = s:get_syn(a:group, 'bg')
+   22              0.000636   let reverse = has('gui_running') || (has("termtruecolor") && &guicolors == 1) ? synIDattr(synIDtrans(hlID(a:group)), 'reverse', 'gui') : synIDattr(synIDtrans(hlID(a:group)), 'reverse', 'cterm')|| synIDattr(synIDtrans(hlID(a:group)), 'reverse', 'term')
+   22   0.000974   0.000332   return reverse ? s:get_array(bg, fg, a:000) : s:get_array(fg, bg, a:000)
+
+FUNCTION  <SNR>85_PreviewCSSColorInLine()
+Called 14 times
+Total time:   0.002381
+ Self time:   0.002381
+
+count  total (s)   self (s)
+                              " TODO use cssColor matchdata
+   14              0.000055   let n = 1
+   14              0.000321   let foundcolor = matchstr( getline(a:where), '#[0-9A-Fa-f]\{3,6\}\>' )
+   14              0.000066   while foundcolor != ''
+                                if foundcolor =~ '#\x\{6}$'
+                                  let color = foundcolor
+                                elseif foundcolor =~ '#\x\{3}$'
+                                  let color = substitute(foundcolor, '\(\x\)\(\x\)\(\x\)', '\1\1\2\2\3\3', '')
+                                else
+                                  let color = ''
+                                endif
+                            
+                                if color != ''
+                                  call s:SetMatcher(color,foundcolor)
+                                endif
+                            
+                                let n+=1
+                                let foundcolor = matchstr( getline(a:where), '#[0-9A-Fa-f]\{3,6}', 0, n )
+                              endwhile
+                            
+                            
+   14              0.000045   let n = 1
+   14              0.000449   let foundcolorlist = matchlist( getline(a:where), 'rgb[a]\=(\(\d\{1,3}\s*%\=\),\s*\(\d\{1,3}\s*%\=\),\s*\(\d\{1,3}\s*%\=\).\{-})', 0, n )
+   14              0.000089   while len(foundcolorlist) != 0
+                                  let foundcolorlist[1] = s:RGBRelativeToAbsolute( foundcolorlist[1] )
+                                  let foundcolorlist[2] = s:RGBRelativeToAbsolute( foundcolorlist[2] )
+                                  let foundcolorlist[3] = s:RGBRelativeToAbsolute( foundcolorlist[3] )
+                            
+                                  let color = "#".join( foundcolorlist[1:3], "" )
+                            
+                                  call s:SetMatcher( color, foundcolorlist[0] )
+                            
+                                  let n+=1
+                                  let foundcolorlist = matchlist( getline(a:where), 'rgb[a]\=(\(\d\{1,3}\s*%\=\),\s*\(\d\{1,3}\s*%\=\),\s*\(\d\{1,3}\s*%\=\).\{-})', 0, n )
+                              endw
+   14              0.000032   return 0
+
+FUNCTION  <SNR>126_get_accented_line()
+Called 7 times
+Total time:   0.000905
+ Self time:   0.000905
+
+count  total (s)   self (s)
+    7              0.000042   if a:self._context.active
+    7              0.000032     let contents = []
+    7              0.000120     let content_parts = split(a:contents, '__accent')
+   16              0.000061     for cpart in content_parts
+    9              0.000169       let accent = matchstr(cpart, '_\zs[^#]*\ze')
+    9              0.000077       call add(contents, cpart)
+    9              0.000020     endfor
+    7              0.000050     let line = join(contents, a:group)
+    7              0.000112     let line = substitute(line, '__restore__', a:group, 'g')
+    7              0.000014   else
+                                let line = substitute(a:contents, '%#__accent[^#]*#', '', 'g')
+                                let line = substitute(line, '%#__restore__#', '', 'g')
+                              endif
+    7              0.000018   return line
+
+FUNCTION  <SNR>126_should_change_group()
+Called 5 times
+Total time:   0.002537
+ Self time:   0.000297
+
+count  total (s)   self (s)
+    5              0.000024   if a:group1 == a:group2
+                                return 0
+                              endif
+    5   0.001235   0.000065   let color1 = airline#highlighter#get_highlight(a:group1)
+    5   0.001129   0.000059   let color2 = airline#highlighter#get_highlight(a:group2)
+    5              0.000056   if has('gui_running') || (has("termtruecolor") && &guicolors == 1)
+                                return color1[1] != color2[1] || color1[0] != color2[0]
+                              else
+    5              0.000033     return color1[3] != color2[3] || color1[2] != color2[2]
+                              endif
+
+FUNCTION  eclim#util#GetLineError()
+Called 7 times
+Total time:   0.000988
+ Self time:   0.000988
+
+count  total (s)   self (s)
+    7              0.000059   let line = line('.')
+    7              0.000046   let col = col('.')
+                            
+    7              0.000035   let errornum = 0
+    7              0.000023   let errorcol = 0
+    7              0.000019   let index = 0
+                            
+    7              0.000054   let locerrors = getloclist(0)
+    7              0.000035   let qferrors = getqflist()
+    7              0.000039   let bufname = expand('%')
+    7              0.000033   let lastline = line('$')
+    7              0.000065   for error in qferrors + locerrors
+                                let index += 1
+                                if bufname(error.bufnr) == bufname && (error.lnum == line || (error.lnum > lastline && line == lastline))
+                                  if errornum == 0 || (col >= error.col && error.col != errorcol)
+                                    let errornum = index
+                                    let errorcol = error.col
+                                  endif
+                                endif
+                              endfor
+                            
+    7              0.000022   if errornum > 0
+                                let src = 'qf'
+                                let cnt = len(qferrors)
+                                let errors = qferrors
+                                if errornum > cnt
+                                  let errornum -= cnt
+                                  let src = 'loc'
+                                  let cnt = len(locerrors)
+                                  let errors = locerrors
+                                endif
+                            
+                                let message = src . ' - (' . errornum . ' of ' . cnt . '): ' . substitute(errors[errornum - 1].text, '^\s\+', '', '')
+                                return message
+                              endif
+    7              0.000019   return ''
+
+FUNCTION  airline#builder#new()
+Called 1 time
+Total time:   0.000055
+ Self time:   0.000055
+
+count  total (s)   self (s)
+    1              0.000014   let builder = copy(s:prototype)
+    1              0.000007   let builder._context = a:context
+    1              0.000004   let builder._sections = []
+                            
+    1              0.000023   call extend(builder._context, { 'left_sep': g:airline_left_sep, 'left_alt_sep': g:airline_left_alt_sep, 'right_sep': g:airline_right_sep, 'right_alt_sep': g:airline_right_alt_sep, }, 'keep')
+    1              0.000003   return builder
+
+FUNCTIONS SORTED ON TOTAL TIME
+count  total (s)   self (s)  function
+    1   0.011679   0.000062  <SNR>55_on_window_changed()
+    1   0.011594   0.000203  airline#update_statusline()
+    1   0.011391   0.000103  <SNR>56_invoke_funcrefs()
+    1   0.009396   0.001268  255()
+    5   0.006212   0.000161  <SNR>126_get_seperator()
+    7   0.005250             <SNR>71_Highlight_Matching_Pair()
+   22   0.004859   0.001507  airline#highlighter#get_highlight()
+    6   0.004216   0.000303  <SNR>126_get_transitioned_seperator()
+    6   0.003913   0.000208  airline#highlighter#add_separator()
+    6   0.003705   0.000457  <SNR>117_exec_separator()
+   12   0.002806   0.000187  airline#themes#get_highlight()
+   44   0.002710             <SNR>117_get_syn()
+    5   0.002537   0.000297  <SNR>126_should_change_group()
+   14   0.002381             <SNR>85_PreviewCSSColorInLine()
+    1   0.001837   0.000166  airline#util#exec_funcrefs()
+    7   0.001696   0.000708  eclim#util#ShowCurrentError()
+    1   0.001354   0.000133  airline#extensions#default#apply()
+    2   0.001125   0.000219  <SNR>127_build_sections()
+    7   0.000988             eclim#util#GetLineError()
+    7   0.000906   0.000314  <SNR>127_add_section()
+
+FUNCTIONS SORTED ON SELF TIME
+count  total (s)   self (s)  function
+    7              0.005250  <SNR>71_Highlight_Matching_Pair()
+   44              0.002710  <SNR>117_get_syn()
+   14              0.002381  <SNR>85_PreviewCSSColorInLine()
+   22   0.004859   0.001507  airline#highlighter#get_highlight()
+    1   0.009396   0.001268  255()
+    7              0.000988  eclim#util#GetLineError()
+    7              0.000905  <SNR>126_get_accented_line()
+    7   0.001696   0.000708  eclim#util#ShowCurrentError()
+   22              0.000642  <SNR>117_get_array()
+    8   0.000573   0.000507  <SNR>127_get_section()
+    6   0.003705   0.000457  <SNR>117_exec_separator()
+    6              0.000442  airline#highlighter#exec()
+    7   0.000906   0.000314  <SNR>127_add_section()
+   10              0.000309  <SNR>126_get_prev_group()
+    6   0.004216   0.000303  <SNR>126_get_transitioned_seperator()
+    5   0.002537   0.000297  <SNR>126_should_change_group()
+    2   0.001125   0.000219  <SNR>127_build_sections()
+    6   0.003913   0.000208  airline#highlighter#add_separator()
+    1   0.011594   0.000203  airline#update_statusline()
+   12   0.002806   0.000187  airline#themes#get_highlight()
+

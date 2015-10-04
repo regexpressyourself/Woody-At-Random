@@ -1,5 +1,6 @@
 <?php require_once("db_connection.php"); ?>
 <?php include("functions.php"); ?>
+<?php find_selected_film(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,21 +24,57 @@
 </head>
 
 <body>
+
+
+
   <div class="site-wrapper">
 
     <div class="site-wrapper-inner">
 
       <div class="cover-container">
 
+        <div class="masthead clearfix">
+          <div class="inner">
+            <a href="index.php"><h3 class="masthead-brand">Woody At Random</h3></a>
+            <nav>
+              <ul class="nav masthead-nav">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="recommend.php">Random Recommendation</a></li>
+                <li><a href="filmography.php">Filmography</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
 
-        <div class="inner cover">
-          <h1 class="cover-heading">Welcome to <br />Woody at Random</h1>
+        <div >
+          <div id="film_name">
+            <h1 ><?php echo $film_name; ?></h1>
+            <p><?php echo $release_date; ?></p>
+          </div>
           <br />
-          <p class="lead">So, you want to check out a Woody Allen film, but don't know where to start? </p>
-          <p class="lead">Let me recommend one at random for you!</p>
-          <p class="lead">
-            <a href="recommend.php" class="btn btn-lg btn-default">Recommend Me Some Woody!</a>
+          <p class="col-md-3">
+            <?php echo $male_lead;?> 
+            <br />&amp;<br />
+            <?php echo $female_lead; ?>
           </p>
+          <img class="col-md-6" src="<?php echo $image_location; ?>" alt="film poster" width="300"/>
+          <p class="col-md-3"><?php echo $summary; ?></p>
+          <p class="col-sm-12"><?php echo $quote;  ?></p>
+          <p class="col-sm-12">Woody's Involvement</p>
+          <div class="col-sm-4">
+            <p>Acted?</p>
+            <p><?php echo $acted; ?></p>
+          </div>
+          <div class="col-sm-4">
+            <p>Wrote?</p>
+            <p><?php echo $wrote; ?></p>
+          </div>
+          <div class="col-sm-4">
+            <p>Directed?</p>
+            <p><?php echo $directed; ?></p>
+          </div>
+          <p class="col-md-6"><?php echo $runtime; ?></p>
+          <p class="col-md-6"><?php echo $genre; ?></p>
         </div>
 
 
@@ -46,11 +83,6 @@
     </div>
 
   </div>
-
-<?php 
-$name = get_title_by_id(1); 
-echo $name;
-?>
 
 
 
