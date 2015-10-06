@@ -25,8 +25,6 @@
 
 <body>
 
-
-
   <div class="site-wrapper">
 
     <div class="site-wrapper-inner">
@@ -60,19 +58,20 @@
           <img class="col-md-6" src="<?php echo $image_location; ?>" alt="film poster" width="300"/>
           <p class="col-md-3"><?php echo $summary; ?></p>
           <p class="col-sm-12"><?php echo $quote;  ?></p>
-          <p class="col-sm-12">Woody's Involvement</p>
-          <div class="col-sm-4">
-            <p>Acted?</p>
-            <p><?php echo $acted; ?></p>
-          </div>
-          <div class="col-sm-4">
-            <p>Wrote?</p>
-            <p><?php echo $wrote; ?></p>
-          </div>
-          <div class="col-sm-4">
-            <p>Directed?</p>
-            <p><?php echo $directed; ?></p>
-          </div>
+          <table class="table">
+            
+          <legend>Woody's Involvement</legend>
+          <tr>
+            <th>Acted?</th>
+            <th>Wrote?</th>
+            <th>Directed?</th>
+          </tr>
+          <tr>
+            <td><?php echo $acted; ?></td>
+            <td><?php echo $wrote; ?></td>
+            <td><?php echo $directed; ?></td>
+          </tr>
+          </table>
           <p class="col-md-6"><?php echo $runtime; ?></p>
           <p class="col-md-6"><?php echo $genre; ?></p>
         </div>

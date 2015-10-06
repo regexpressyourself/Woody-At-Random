@@ -47,10 +47,6 @@
 
   </div>
 
-<?php 
-$name = get_title_by_id(1); 
-echo $name;
-?>
 
 
 
