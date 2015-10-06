@@ -161,6 +161,17 @@ body {
   }
 }
 
-#film_name {
+div#film_name {
   padding: 5%;
+}
+.form-group {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.form-inline {
+  padding-top: 30px;
+}
+.checkbox {
+  padding-left: 5%;
+  padding-right: 5%;
 }
