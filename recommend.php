@@ -13,14 +13,14 @@
 
           <!-- Bootstrap -->
           <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-          <link href="custom.css" rel="stylesheet">
+            <link href="custom.css" rel="stylesheet">
 
-            <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-                        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-                                                <!--[if lt IE 9]>
-                                                <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-                                                  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-                                                    <![endif]-->
+              <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+                            <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+                                                        <!--[if lt IE 9]>
+                                                        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+                                                          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+                                                            <![endif]-->
 </head>
 
 <body>
@@ -30,6 +30,7 @@
     <div class="site-wrapper-inner">
 
       <div class="cover-container">
+        
 
         <div class="masthead clearfix">
           <div class="inner">
@@ -57,21 +58,25 @@
           </p>
           <img class="col-md-6" src="<?php echo $image_location; ?>" alt="film poster" width="300"/>
           <p class="col-md-3"><?php echo $summary; ?></p>
-          <p class="col-sm-12"><?php echo $quote;  ?></p>
-          <table class="table">
-            
-          <legend>Woody's Involvement</legend>
-          <tr>
-            <th>Acted?</th>
-            <th>Wrote?</th>
-            <th>Directed?</th>
-          </tr>
-          <tr>
-            <td><?php echo $acted; ?></td>
-            <td><?php echo $wrote; ?></td>
-            <td><?php echo $directed; ?></td>
-          </tr>
-          </table>
+          <p class="col-md-12"><?php echo $quote;  ?></p>
+          <br />
+
+          <fieldset class="col-md-12">
+            <table class="table">
+              <legend>Woody's Involvement</legend>
+              <tr>
+                <th>Acted?</th>
+                <th>Wrote?</th>
+                <th>Directed?</th>
+              </tr>
+              <tr>
+                <td><?php echo $acted; ?></td>
+                <td><?php echo $wrote; ?></td>
+                <td><?php echo $directed; ?></td>
+              </tr>
+            </table>
+          </fieldset>
+
           <p class="col-md-6"><?php echo $runtime; ?></p>
           <p class="col-md-6"><?php echo $genre; ?></p>
         </div>
@@ -85,10 +90,10 @@
 
 
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="bootstrap/js/bootstrap.min.js"></script>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>
