@@ -56,26 +56,29 @@
             <br />&amp;<br />
             <?php echo $female_lead; ?>
           </p>
-          <img class="col-md-6" src="<?php echo $image_location; ?>" alt="film poster" width="300"/>
+          <?php 
+            $image = poster_html($image_location);
+            $details = details_html($wrote, $acted, $directed, $runtime, $genre);
+            $output_html = "<div ";
+            $output_html .= "class='col-md-6' ";
+            $output_html .= "id='details_and_poster' ";
+            $output_html .= "onclick='return ";
+            $output_html .= "showDetails(";
+            $output_html .= $image . ", " . $details;
+            $output_html .= ")'";
+            $output_html .= "></div>";
+            echo $output_html;
+           ?>
+          <div id="details_and_poster" class="col-md-6">
+          <img src="<?php echo $image_location; ?>" alt="film poster" width="300"/>
+          </div>
           <p class="col-md-3"><?php echo $summary; ?></p>
           <p class="col-md-12"><?php echo $quote;  ?></p>
           <br />
 
-          <fieldset class="col-md-12">
-            <table class="table">
-              <legend>Woody's Involvement</legend>
-              <tr>
-                <th>Acted?</th>
-                <th>Wrote?</th>
-                <th>Directed?</th>
-              </tr>
-              <tr>
-                <td><?php echo $acted; ?></td>
-                <td><?php echo $wrote; ?></td>
-                <td><?php echo $directed; ?></td>
-              </tr>
-            </table>
-          </fieldset>
+          <?php  
+            echo details_html($wrote, $acted, $directed, $runtime, $genre);
+          ?>
 
           <p class="col-md-6"><?php echo $runtime; ?></p>
           <p class="col-md-6"><?php echo $genre; ?></p>
@@ -94,6 +97,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="custom.js"></script>
 </body>
 
 </html>

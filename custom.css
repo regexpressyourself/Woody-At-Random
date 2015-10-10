@@ -161,7 +161,7 @@ body {
   }
 }
 
-div#film_name {
+#film_name {
   padding: 5%;
 }
 .form-group {
@@ -174,4 +174,8 @@ div#film_name {
 .checkbox {
   padding-left: 5%;
   padding-right: 5%;
+}
+
+th {
+  text-align: center;
 }

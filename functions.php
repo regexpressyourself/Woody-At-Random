@@ -115,6 +115,47 @@ function generate_random_id() {
   return $random_number;
 }
 
+function details_html($wrote, $acted, $directed, $runtime, $genre) {
+  $final_html = "<table class='table'>";
+  $final_html .= "<tr>";
+  $final_html .= "<h2>Details</h2>";
+  $final_html .= "</tr>";
+  $final_html .= "<tr>";
+  $final_html .= "<th colspan='3'>Genre</th>";
+  $final_html .= "</tr>";
+  $final_html .= "<tr>";
+  $final_html .= "<td colspan='3'>" . $genre . "</td>";
+  $final_html .= "</tr>";
+  $final_html .= "<tr>";
+  $final_html .= "<th colspan='3'>Runtime</th>";
+  $final_html .= "</tr>";
+  $final_html .= "<td colspan='3'>" . $runtime . "</td>";
+  $final_html .= "</tr>";
+  $final_html .= "<tr>";
+  $final_html .= "<h2>Woody's Involvement</h2>";
+  $final_html .= "</tr>";
+  $final_html .= "<tr>";
+  $final_html .= "<th>Acted?</th>";
+  $final_html .= "<th>Wrote?</th>";
+  $final_html .= "<th>Directed?</th>";
+  $final_html .= "</tr>";
+  $final_html .= "<tr>";
+  $final_html .= "<td>" . $acted . "</td>";
+  $final_html .= "<td>" . $wrote . "</td>";
+  $final_html .= "<td>" . $directed . "</td>";
+  $final_html .= "</tr>";
+  $final_html .= "</table>";
+
+  return $final_html;
+}
+
+function poster_html($image_location) {
+  $final_html = "<img src='"; 
+  $final_html .= $image_location;
+  $final_html .= "' alt='film poster' />";
+  return $final_html;
+
+}
 
 
 ?>
