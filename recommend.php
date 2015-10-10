@@ -56,7 +56,21 @@
             <br />&amp;<br />
             <?php echo $female_lead; ?>
           </p>
+
+          <script type="text/javascript" charset="utf-8">
+            /*
+            <?php 
+            $image = poster_html($image_location);
+            $details = details_html($wrote, $acted, $directed, $runtime, $genre);
+             ?>
+            var image = <?php echo "\"" . $image . "\""; ?>;
+            var details = <?php  echo "\"" . $details . "\"";?>;
+            window.document.getElementById("details_and_poster").addEventListener("click", showDetails(image, details);
+          </script>
+             */
+            
           <?php 
+          /*
             $image = poster_html($image_location);
             $details = details_html($wrote, $acted, $directed, $runtime, $genre);
             $output_html = "<div ";
@@ -64,21 +78,25 @@
             $output_html .= "id='details_and_poster' ";
             $output_html .= "onclick='return ";
             $output_html .= "showDetails(";
-            $output_html .= $image . ", " . $details;
+            $output_html .= "window['" . $image . "']" . ", ";
+            $output_html .= "window[\\'" . $details . "\\']";
             $output_html .= ")'";
             $output_html .= "></div>";
             echo $output_html;
+           */
            ?>
-          <div id="details_and_poster" class="col-md-6">
+           <div id="poster" style="display:block;" onclick="return showDetails()" class="col-md-6">
           <img src="<?php echo $image_location; ?>" alt="film poster" width="300"/>
+          </div>
+          <div style="display:none;" onclick="return showDetails()" id="details" class="">
+          <?php  
+            echo details_html($wrote, $acted, $directed, $runtime, $genre);
+          ?>
           </div>
           <p class="col-md-3"><?php echo $summary; ?></p>
           <p class="col-md-12"><?php echo $quote;  ?></p>
           <br />
 
-          <?php  
-            echo details_html($wrote, $acted, $directed, $runtime, $genre);
-          ?>
 
           <p class="col-md-6"><?php echo $runtime; ?></p>
           <p class="col-md-6"><?php echo $genre; ?></p>
