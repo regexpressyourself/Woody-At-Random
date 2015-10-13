@@ -14,6 +14,7 @@
           <!-- Bootstrap -->
           <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
             <link href="custom.css" rel="stylesheet">
+            <link href="flip.css" rel="stylesheet">
 
               <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
                             <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,62 +46,50 @@
           </div>
         </div>
 
-        <div >
           <div id="film_name">
             <h1 ><?php echo $film_name; ?></h1>
             <p><?php echo $release_date; ?></p>
           </div>
-          <br />
-          <p class="col-md-3">
-            <?php echo $male_lead;?> 
-            <br />&amp;<br />
-            <?php echo $female_lead; ?>
-          </p>
-
-          <script type="text/javascript" charset="utf-8">
-            /*
-            <?php 
-            $image = poster_html($image_location);
-            $details = details_html($wrote, $acted, $directed, $runtime, $genre);
-             ?>
-            var image = <?php echo "\"" . $image . "\""; ?>;
-            var details = <?php  echo "\"" . $details . "\"";?>;
-            window.document.getElementById("details_and_poster").addEventListener("click", showDetails(image, details);
-          </script>
-             */
+          <div class="clearfix">
             
-          <?php 
-          /*
-            $image = poster_html($image_location);
-            $details = details_html($wrote, $acted, $directed, $runtime, $genre);
-            $output_html = "<div ";
-            $output_html .= "class='col-md-6' ";
-            $output_html .= "id='details_and_poster' ";
-            $output_html .= "onclick='return ";
-            $output_html .= "showDetails(";
-            $output_html .= "window['" . $image . "']" . ", ";
-            $output_html .= "window[\\'" . $details . "\\']";
-            $output_html .= ")'";
-            $output_html .= "></div>";
-            echo $output_html;
-           */
-           ?>
-           <div id="poster" style="display:block;" onclick="return showDetails()" class="col-md-6">
-          <img src="<?php echo $image_location; ?>" alt="film poster" width="300"/>
           </div>
-          <div style="display:none;" onclick="return showDetails()" id="details" class="">
-          <?php  
-            echo details_html($wrote, $acted, $directed, $runtime, $genre);
-          ?>
+          <br />
+          <div class="row">
+              <div class="col-md-3 img-thumbnail leads-feature">
+                <h2 id="feature-heading">Starring:</h2>
+                <p id="leads-text">
+                  <?php echo $male_lead;?> 
+                  <br />&amp;<br />
+                  <?php echo $female_lead; ?>
+                </p>
+            </div>
+
+
+
+            <div class="card effect__click">
+              <div class="card__front">
+                <img id="poster"  style="display:;" src="<?php echo $image_location; ?>" alt="film poster" class="col-md-6 card__text" width="300"/>
+              </div>
+              <div class="card__back">
+                <div style="display:none;" id="details" class="card__text">
+                  <?php  
+                  echo details_html($wrote, $acted, $directed, $runtime, $genre);
+?>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 img-thumbnail summary-feature">
+              <h2 id="feature-heading">Summary:</h2>
+              <p id="starring-text"><?php echo $summary; ?></p>
+            </div>
           </div>
-          <p class="col-md-3"><?php echo $summary; ?></p>
-          <p class="col-md-12"><?php echo $quote;  ?></p>
+          <p class="col-md-12"><?php echo nl2br($quote);  ?></p>
           <br />
 
 
           <p class="col-md-6"><?php echo $runtime; ?></p>
           <p class="col-md-6"><?php echo $genre; ?></p>
-        </div>
 
 
       </div>
@@ -116,6 +105,8 @@
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="bootstrap/js/bootstrap.min.js"></script>
   <script src="custom.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js">
+  <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.16/dist/jquery.flip.min.js">
 </body>
 
 </html>

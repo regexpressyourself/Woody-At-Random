@@ -31,7 +31,7 @@ function find_selected_film() {
     $current_film = get_film_by_id($_GET["film"]);
     $film_name = htmlentities($current_film["film_name"]);
     $release_date = htmlentities($current_film["release_date"]);
-    $genre = htmlentities($current_film["genre"]);
+    $genre = ($current_film["genre"]);
     $summary = htmlentities($current_film["summary"]);
     $wrote = htmlentities(binary_to_words($current_film["wrote"]));
     $acted = htmlentities(binary_to_words($current_film["acted"]));
