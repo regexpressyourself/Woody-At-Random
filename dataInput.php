@@ -19,10 +19,28 @@ if (isset($_POST['submit'])) {
   $acted ? $acted = (int) 1 : $acted = (int) 0;
   $wrote ? $wrote = (int) 1 : $wrote = (int) 0;
   $directed ? $directed = (int) 1 : $directed = (int) 0;
+
+  $query = "INSERT INTO woody_table (";
+  $query .= "film_name, release_date, genre, summary, ";
+  $query .= "wrote, acted, directed, runtime, female_lead, ";
+  $query .= "male_lead, quote, image_location";
+  $query .= ") VALUES (";
+  $query .= " '{$film_name}', '{$release_date}', '{$genre}', '{$summary}', ";
+  $query .= "{$wrote}, {$acted}, {$directed}, '{$runtime}', '{$female_lead}', ";
+  $query .= "'{$male_lead}', '{$quote}', '{$image_location}'";
+  $query .= ")";
+  $result = mysqli_query($connection, $query);
+
+  if ($result) {
+    redirect_to("recommend.php");
+  }
+  else {
+    redirect_to("dataInput.php");
+  }
+
+
 }
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">

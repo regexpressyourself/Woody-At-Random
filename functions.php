@@ -31,7 +31,7 @@ function find_selected_film() {
     $current_film = get_film_by_id($_GET["film"]);
     $film_name = htmlentities($current_film["film_name"]);
     $release_date = htmlentities($current_film["release_date"]);
-    $genre = htmlentities($current_film["genre"]);
+    $genre = ($current_film["genre"]);
     $summary = htmlentities($current_film["summary"]);
     $wrote = htmlentities(binary_to_words($current_film["wrote"]));
     $acted = htmlentities(binary_to_words($current_film["acted"]));
@@ -115,6 +115,47 @@ function generate_random_id() {
   return $random_number;
 }
 
+function details_html($wrote, $acted, $directed, $runtime, $genre) {
+  $final_html = "<table class='table'>";
+  $final_html .= "<tr>";
+  $final_html .= "<h2>Details</h2>";
+  $final_html .= "</tr>";
+  $final_html .= "<tr>";
+  $final_html .= "<th colspan='3'>Genre</th>";
+  $final_html .= "</tr>";
+  $final_html .= "<tr>";
+  $final_html .= "<td colspan='3'>" . $genre . "</td>";
+  $final_html .= "</tr>";
+  $final_html .= "<tr>";
+  $final_html .= "<th colspan='3'>Runtime</th>";
+  $final_html .= "</tr>";
+  $final_html .= "<td colspan='3'>" . $runtime . "</td>";
+  $final_html .= "</tr>";
+  $final_html .= "<tr>";
+  $final_html .= "<h2>Woody's Involvement</h2>";
+  $final_html .= "</tr>";
+  $final_html .= "<tr>";
+  $final_html .= "<th>Acted?</th>";
+  $final_html .= "<th>Wrote?</th>";
+  $final_html .= "<th>Directed?</th>";
+  $final_html .= "</tr>";
+  $final_html .= "<tr>";
+  $final_html .= "<td>" . $acted . "</td>";
+  $final_html .= "<td>" . $wrote . "</td>";
+  $final_html .= "<td>" . $directed . "</td>";
+  $final_html .= "</tr>";
+  $final_html .= "</table>";
+
+  return $final_html;
+}
+
+function poster_html($image_location) {
+  $final_html = "<img src='"; 
+  $final_html .= $image_location;
+  $final_html .= "' alt='film poster' />";
+  return $final_html;
+
+}
 
 
 ?>

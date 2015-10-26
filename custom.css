@@ -161,8 +161,7 @@ body {
   }
 }
 
-div#film_name {
-  padding: 5%;
+#film_name {
 }
 .form-group {
   padding-left: 5%;
@@ -174,4 +173,49 @@ div#film_name {
 .checkbox {
   padding-left: 5%;
   padding-right: 5%;
+}
+
+th {
+  text-align: center;
+}
+
+.leads-feature {
+  color: black;
+  background-color:  #474747;
+  border-color: black;
+  text-align: center;
+  margin-top:10px;
+  margin-bottom:10px;
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-left:50px;
+  padding-right:50px;
+}
+.summary-feature {
+  color: black;
+  background-color:  #474747;
+  border-color: black;
+  height: 100%;
+  margin-top:10px;
+  margin-bottom:10px;
+  padding:20px;
+  text-align: center;
+}
+#leads-text {
+  font-size: 120%;
+  font-style: oblique;
+  text-align: center;
+  color: #FFF;
+}
+
+#starring-text {
+  font-size: 120%;
+  text-align: center;
+  color: #FFF;
+}
+
+#feature-heading{
+  text-align: center;
+  color: #FFF;
+
 }

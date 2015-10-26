@@ -14,6 +14,7 @@
           <!-- Bootstrap -->
           <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
             <link href="custom.css" rel="stylesheet">
+            <link href="flip.css" rel="stylesheet">
 
               <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
                             <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,41 +46,50 @@
           </div>
         </div>
 
-        <div >
           <div id="film_name">
             <h1 ><?php echo $film_name; ?></h1>
             <p><?php echo $release_date; ?></p>
           </div>
+          <div class="clearfix">
+            
+          </div>
           <br />
-          <p class="col-md-3">
-            <?php echo $male_lead;?> 
-            <br />&amp;<br />
-            <?php echo $female_lead; ?>
-          </p>
-          <img class="col-md-6" src="<?php echo $image_location; ?>" alt="film poster" width="300"/>
-          <p class="col-md-3"><?php echo $summary; ?></p>
-          <p class="col-md-12"><?php echo $quote;  ?></p>
+          <div class="row">
+              <div class="col-md-3 img-thumbnail leads-feature">
+                <h2 id="feature-heading">Starring:</h2>
+                <p id="leads-text">
+                  <?php echo $male_lead;?> 
+                  <br />&amp;<br />
+                  <?php echo $female_lead; ?>
+                </p>
+            </div>
+
+
+
+            <div class="card effect__click">
+              <div class="card__front">
+                <img id="poster"  style="display:;" src="<?php echo $image_location; ?>" alt="film poster" class="col-md-6 card__text" width="300"/>
+              </div>
+              <div class="card__back">
+                <div style="display:none;" id="details" class="card__text">
+                  <?php  
+                  echo details_html($wrote, $acted, $directed, $runtime, $genre);
+?>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 img-thumbnail summary-feature">
+              <h2 id="feature-heading">Summary:</h2>
+              <p id="starring-text"><?php echo $summary; ?></p>
+            </div>
+          </div>
+          <p class="col-md-12"><?php echo nl2br($quote);  ?></p>
           <br />
 
-          <fieldset class="col-md-12">
-            <table class="table">
-              <legend>Woody's Involvement</legend>
-              <tr>
-                <th>Acted?</th>
-                <th>Wrote?</th>
-                <th>Directed?</th>
-              </tr>
-              <tr>
-                <td><?php echo $acted; ?></td>
-                <td><?php echo $wrote; ?></td>
-                <td><?php echo $directed; ?></td>
-              </tr>
-            </table>
-          </fieldset>
 
           <p class="col-md-6"><?php echo $runtime; ?></p>
           <p class="col-md-6"><?php echo $genre; ?></p>
-        </div>
 
 
       </div>
@@ -94,6 +104,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="custom.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js">
+  <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.16/dist/jquery.flip.min.js">
 </body>
 
 </html>
