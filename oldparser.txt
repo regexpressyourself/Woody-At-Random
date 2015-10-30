@@ -1,0 +1,134 @@
+id - film_name - release_date - genre - summary - wrote - acted - directed - runtime - female_lead - male_lead - quote - image_location.jpg
+
+--ACTUAL--
+id - film_name - release_date - genre - acted - directed - runtime - image_location.jpg
+
+ 1 - What's New Pussycat? - 1965 - comedy - summary - 1 - 1 - 0 - 108 - female_lead - male_lead - quote - pussycat.jpg
+ 2 - What's Up, Tiger Lily? - 1966 - adventure comedy crime - summary - 1 - 1 - 1 - 80 - female_lead - male_lead - quote - tiger.jpg
+ 3 - Casino Royale - 1967 - comedy - summary - 0 - 1 - 0 - 131 - female_lead - male_lead - quote - casino.jpg
+ 4 - Don't Drink the Water - 1969 - comedy - summary - 1 - 0 - 0 - 100 - female_lead - male_lead - quote - drinkwater.jpg
+ 5 - Take the Money and Run - 1969 - comedy crime - summary - 1 - 1 - 1 - 85 - female_lead - male_lead - quote - takemoney.jpg
+ 6 - Bananas - 1971 - comedy - summary - 1 - 1 - 1 - 82 - female_lead - male_lead - quote - banana.jpg
+ 7 - Play It Again, Sam - 1972 - comedy romance - summary - 1 - 1 - 0 - 85 - female_lead - male_lead - quote - playitsam.jpg
+ 8 - Everything You Always Wanted to Know About Sex* (*But Were Afraid to Ask) - 1972 - comedy - summary - 1 - 1 - 1 - 88 - female_lead - male_lead - quote - everythingyouwanted.jpg
+ 9 - Sleeper - 1973 - comedy scifi - summary - 1 - 1 - 1 - 88 - female_lead - male_lead - quote - sleeper.jpg
+ 10 - Love and Death - 1975 - comedy war - summary - 1 - 1 - 1 - 85 - female_lead - male_lead - quote - lovedeath.jpg
+ 11 - The Front - 1976 - comedy drama - summary - 0 - 1 - 0 - 95 - female_lead - male_lead - quote - front.jpg
+ 12 - Annie Hall - 1977 - comedy romance - summary - 1 - 1 - 1 - 93 - female_lead - male_lead - quote - anniehall.jpg
+ 13 - Interiors - 1978 - drama - summary - 1 - 0 - 1 - 99 - female_lead - male_lead - quote - interiors.jpg
+ 14 - Manhattan - 1979 - comedy drama romance - summary - 1 - 1 - 1 - 96 - female_lead - male_lead - quote - manhattan.jpg
+ 15 - Stardust Memories - 1980 - comedy drama - summary - 1 - 1 - 1 - 88 - female_lead - male_lead - quote - stardust.jpg
+ 17 - A Midsummer Night's Sex Comedy - 1982 - comedy - summary - 1 - 1 - 1 - 88 - female_lead - male_lead - quote - midsummernight.jpg
+ 18 - Zelig - 1983 - comedy - summary - 1 - 1 - 1 - 79 - female_lead - male_lead - quote - zelig.jpg
+ 19 - Broadway Danny Rose - 1984 - comedy - summary - 1 - 1 - 1 - 84 - female_lead - male_lead - quote - broadwaydanny.jpg
+ 10 - The Purple Rose of Cairo - 1985  - comedy fantasy romance - summary - 1 - 0 - 1 - 82 - female_lead - male_lead - quote - purplerose.jpg
+ 23 - Hannah and Her Sisters - 1986 - comedy drama - summary - 1 - 1 - 1 - 106 - female_lead - male_lead - quote - hannahsisters.jpg
+ 24 - Radio Days - 1987 - comedy - summary - 1 - 1 - 1 - 85 - female_lead - male_lead - quote - radiodays.jpg
+ 25 - September - 1987 - drama - summary - 1 - 0 - 1 - 82 - female_lead - male_lead - quote - september.jpg
+ 27 - Another Woman - 1988 - drama - summary - 1 - 0 - 1 - 84 - female_lead - male_lead - quote - anotherwoman.jpg
+ 28 - New York Stories - 1989 - comedy drama romance - summary - 1 - 1 - 1 - 124 - female_lead - male_lead - quote - nystories.jpg
+ 29 - Crimes and Misdemeanors - 1989 - comedy drama - summary - 1 - 1 - 1 - 104 - female_lead - male_lead - quote - crimesmisdemeanors.jpg
+ 20 - Alice - 1990 - comedy fantasy romance - summary - 1 - 0 - 1 - 102 - female_lead - male_lead - quote - alice.jpg
+ 21 - Scenes from a Mall - 1991 - comedy - summary - 0 - 1 - 0 - 89 - female_lead - male_lead - quote - scenesfrommall.jpg
+ 22 - Shadows and Fog - 1991 - comedy - summary - 1 - 1 - 1 - 85 - female_lead - male_lead - quote - shadowsfog.jpg
+ 23 - Husbands and Wives - 1992 - comedy drama romance - summary - 1 - 1 - 1 - 108 - female_lead - male_lead - quote - husbandswives.jpg
+ 34 - Manhattan Murder Mystery - 1993 - comedy mystery - summary - 1 - 1 - 1 - 104 - female_lead - male_lead - quote - murdermystery.jpg
+ 35 - Bullets over Broadway - 1994 - comedy crime - summary - 1 - 0 - 1 - 98 - female_lead - male_lead - quote - bulletsbroadway.jpg
+ 3d - Don't Drink The Water - 1994 - comedy - summary - 1 - 1 - 1 - 100 - female_lead - male_lead - quote - drinkwater.jpg
+ 36 - Mighty Aphrodite - 1995  - comedy fantasy romance - summary - 1 - 1 - 1 - 95 - female_lead - male_lead - quote - aphrodite.jpg
+ 37 - Everyone Says I Love You - 1996 - comedy musical romance - summary - 1 - 1 - 1 - 101 - female_lead - male_lead - quote - everyonesays.jpg
+ 38 - Deconstructing Harry - 1997 - comedy - summary - 1 - 1 - 1 - 96 - female_lead - male_lead - quote - harry.jpg
+ 31 - Celebrity - 1998 - comedy drama - summary - 1 - 0 - 1 - 113 - female_lead - male_lead - quote - celebrity.jpg
+ 34 - Sweet and Lowdown - 1999 - comedy drama music - summary - 1 - 1 - 1 - 95 - female_lead - male_lead - quote - sweetlowdown.jpg
+ 36 - Small Time Crooks - 2000 - comedy crime - summary - 1 - 1 - 1 - 95 - female_lead - male_lead - quote - smalltime.jpg
+ 38 - Picking Up the Pieces - 2000 - comedy fantasy - summary - 0 - 1 - 0 - 95 - female_lead - male_lead - quote - pickingpieces.jpg
+ 49 - The Curse of the Jade Scorpion - 2001 - comedy crime mystery - summary - 1 - 1 - 1 - 103 - female_lead - male_lead - quote - jadescorpion.jpg
+ 41 - Hollywood Ending - 2002 - comedy romance - summary - 1 - 1 - 1 - 114 - female_lead - male_lead - quote - hollywoodending.jpg
+ 43 - Anything Else - 2003 - comedy romance - summary - 1 - 1 - 1 - 108 - female_lead - male_lead - quote - anythingelse.jpg
+ 45 - Melinda and Melinda - 2004 - comedy drama romance - summary - 1 - 0 - 1 - 99 - female_lead - male_lead - quote - melinda.jpg
+ 48 - Match Point - 2005 - drama romance thriller - summary - 1 - 0 - 1 - 124 - female_lead - male_lead - quote - matchpoint.jpg
+ 49 - Scoop - 2006 - comedy mystery - summary - 1 - 1 - 1 - 96 - female_lead - male_lead - quote - scoop.jpg
+ 41 - Cassandra's Dream - 2007 - crime drama romance - summary - 1 - 0 - 1 - 110 - female_lead - male_lead - quote - cassandra.jpg
+ 42 - Vicky Cristina Barcelona - 2008 - drama romance - summary - 1 - 0 - 1 - 97 - female_lead - male_lead - quote - vicky.jpg
+ 43 - Whatever Works - 2009 - comedy romance - summary - 1 - 0 - 1 - 92 - female_lead - male_lead - quote - whateverworks.jpg
+ 44 - You Will Meet a Tall Dark Stranger - 2010 - comedy drama romance - summary - 1 - 0 - 1 - 100 - female_lead - male_lead - quote - talldarkstranger.jpg
+ 55 - Midnight in Paris - 2011 - comedy fantasy romance - summary - 1 - 0 - 1 - 94 - female_lead - male_lead - quote - midnightparis.jpg
+ 57 - To Rome with Love - 2012 - comedy romance - summary - 1 - 1 - 1 - 112 - female_lead - male_lead - quote - romewithlove.jpg
+ 58 - Blue Jasmine - 2013 - drama romance - summary - 1 - 0 - 1 - 99 - female_lead - male_lead - quote - jasmine.jpg
+ 59 - Fading Gigolo - 2014 - comedy - summary - 0 - 1 - 0 - 90 - female_lead - male_lead - quote - gigolo.jpg
+ 50 - Magic in the Moonlight - 2014 - comedy romance - summary - 1 - 0 - 1 - 97 - female_lead - male_lead - quote - magicmoonlight.jpg
+ 51 - Irrational Man - 2015 - drama mystery - summary - 1 - 0 - 1 - 95  - female_lead - male_lead - quote - irrational.jpg
+
+id 2 for reference when stuff gets deleted
+ 1 
+ 2 
+ 3 
+ 4 
+ 5 
+ 6 
+ 7 
+ 8 
+ 9 
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
