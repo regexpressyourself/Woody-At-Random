@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) {
 <body>
   <h1>Let's Input Some Data!</h1>
   <h2><?php echo $film_name; ?></h2>
-  <h3><a href="https://www.google.com/search?q=<?php echo $film_name; ?>%3F+site:imdb.com&btnI">summary</a></h3>
+  <h3><a href="https://www.google.com/search?q=<?php echo $film_name; ?>+poster&source=lnms&tbm=isch&sa=X&ved&btnI&tbs=isz:l">summary</a></h3>
   <h2><a href="dataInput.php?film=<?php echo $film_id + 1; ?>">NEXT FILM</a></h2>
 
   <form class="form-horizontal" action="dataInput.php" method="post" >

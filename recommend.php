@@ -68,7 +68,7 @@
 
             <div class="card effect__click">
               <div class="card__front">
-                <img id="poster"  style="display:;" src="<?php echo $image_location; ?>" alt="film poster" class="col-md-6 card__text" width="300"/>
+                <img id="poster"  style="display:;" src="img/<?php echo $image_location; ?>" alt="film poster" class="col-md-6 card__text" width="300"/>
               </div>
               <div class="card__back">
                 <div style="display:none;" id="details" class="card__text">
