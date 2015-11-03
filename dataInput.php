@@ -1,41 +1,35 @@
 <?php require_once("db_connection.php");  ?>
 <?php include("functions.php");  ?>
+<?php find_selected_film_2(); ?>
 
 <?php  
 if (isset($_POST['submit'])) {
-  $film_name = $_POST["film_name"];
-  $release_date = $_POST["release_date"];
-  $genre = $_POST["genre"];
   $summary = $_POST["summary"];
-  $wrote = isset($_POST["wrote"]) ? $_POST["wrote"] : '';
-  $acted = isset($_POST["acted"]) ? $_POST["acted"] : '';
-  $directed = isset($_POST["directed"]) ? $_POST["directed"] : '';
-  $runtime = (int) $_POST["runtime"];
   $female_lead = $_POST["female_lead"];
   $male_lead = $_POST["male_lead"];
-  $quote = $_POST["quote"];
-  $image_location = $_POST["image_location"];
+  $film_id = $_POST["id"];
+  $quote = nl2br($_POST["quote"]);
 
-  $acted ? $acted = (int) 1 : $acted = (int) 0;
-  $wrote ? $wrote = (int) 1 : $wrote = (int) 0;
-  $directed ? $directed = (int) 1 : $directed = (int) 0;
 
-  $query = "INSERT INTO woody_table (";
-  $query .= "film_name, release_date, genre, summary, ";
-  $query .= "wrote, acted, directed, runtime, female_lead, ";
-  $query .= "male_lead, quote, image_location";
-  $query .= ") VALUES (";
-  $query .= " '{$film_name}', '{$release_date}', '{$genre}', '{$summary}', ";
-  $query .= "{$wrote}, {$acted}, {$directed}, '{$runtime}', '{$female_lead}', ";
-  $query .= "'{$male_lead}', '{$quote}', '{$image_location}'";
-  $query .= ")";
+  $query = "UPDATE `woody_table` SET ";
+  $query .= "summary = '{$summary}', ";
+  $query .= "female_lead = '{$female_lead}', ";
+  $query .= "male_lead = '{$male_lead}',  ";
+  $query .=  "quote = '{$quote}' ";
+  $query .= "WHERE ";
+  $query .= "id = {$film_id}";
   $result = mysqli_query($connection, $query);
 
   if ($result) {
-    redirect_to("recommend.php");
+    $nextpage = "dataInput.php?film=";
+    $nextpage .= ($film_id + 1);
+
+    redirect_to($nextpage);
   }
   else {
-    redirect_to("dataInput.php");
+    $nextpage = "dataInput.php?film=";
+    $nextpage .= ($film_id);
+    redirect_to($nextpage);
   }
 
 
@@ -67,29 +61,14 @@ if (isset($_POST['submit'])) {
 
 <body>
   <h1>Let's Input Some Data!</h1>
+  <h2><?php echo $film_name; ?></h2>
+  <h3><a href="https://www.google.com/search?q=<?php echo $film_name; ?>%3F+site:imdb.com&btnI">summary</a></h3>
+  <h2><a href="dataInput.php?film=<?php echo $film_id + 1; ?>">NEXT FILM</a></h2>
 
   <form class="form-horizontal" action="dataInput.php" method="post" >
 
     <div class="form-inline">
 
-      <div class="form-group">
-        <label class="control-label" for="film_name">Film Name</label>
-        <input class="form-control" type="text" name="film_name" id="film_name" value="" />
-      </div>
-
-      <div class="form-group">
-        <label class="control-label" for="release_date">Release Date</label>
-        <input class="form-control" type="text" name="release_date" id="release_date" value="" />
-
-      </div>
-
-    </div>
-    <div class="form-inline">
-      <div class="form-group">
-        <label class="control-label" for="genre">Genre</label>
-        <input class="form-control" type="text" name="genre" id="genre" value="" />
-
-      </div>
 
       <div class="form-group">
         <label class="control-label" for="summary">Summary</label>
@@ -99,48 +78,25 @@ if (isset($_POST['submit'])) {
     </div>
     <div class="form-inline">
 
-      <div class="checkbox">
-        <label for="wrote">
-          <input type="checkbox" name="wrote" id="wrote"/> Wrote?
-        </label>
-      </div>
 
-      <div class="checkbox">
-        <label for="acted">
-          <input type="checkbox" name="acted" id="acted"/> Acted?
-        </label>
-      </div>
-
-      <div class="checkbox">
-        <label for="directed">
-          <input type="checkbox" name="directed" id="directed"/> Directed?
-        </label>
-      </div>
-
-    </div>
-    <div class="form-inline">
       <div class="form-group">
-        <label class="control-label" for="runtime">Runtime</label>
-        <input class="form-control" type="text" name="runtime" id="runtime" value="" />
-
-      </div>
-      <div class="form-group">
-        <label class="control-label" for="image_location">Image Location</label>
-        <input class="form-control" type="text" name="image_location" id="image_location" value="img/" />
+        <label class="control-label" for="id">id</label>
+        <input type="text" class="form-control" name="id" id="id" value="<?php echo $film_id; ?>"/>
 
       </div>
     </div>
+
     <div class="form-inline">
 
       <div class="form-group">
         <label class="control-label" for="female_lead">Female Lead</label>
-        <input class="form-control" type="text" name="female_lead" id="female_lead" value="" />
+        <input class="form-control" type="text" name="female_lead" id="female_lead" value="n/a" />
 
       </div>
 
       <div class="form-group">
         <label class="control-label" for="male_lead">Male Lead</label>
-        <input class="form-control" type="text" name="male_lead" id="male_lead" value="" />
+        <input class="form-control" type="text" name="male_lead" id="male_lead" value="n/a" />
 
       </div>
     </div>
@@ -148,7 +104,9 @@ if (isset($_POST['submit'])) {
 
       <div class="form-group">
         <label class="control-label" for="quote">Quote</label>
-        <textarea class="form-control" rows="3" name="quote" id="quote" value="" ></textarea>
+        <pre>
+          <textarea class="form-control" rows="3" name="quote" id="quote" value="" ></textarea>
+        </pre>
 
       </div>
     </div>

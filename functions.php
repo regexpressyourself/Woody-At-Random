@@ -12,6 +12,40 @@ function mysql_prep($string) {
     return $escaped_string;
 }
 
+function find_selected_film_2(){
+  global $current_film;
+  global $film_name;
+  global $release_date;
+  global $genre;
+  global $summary;
+  global $wrote;
+  global $acted;
+  global $directed;
+  global $runtime;
+  global $female_lead;
+  global $male_lead;
+  global $quote;
+  global $image_location;
+  global $film_id;
+
+  if (isset($_GET["film"])) {
+    $current_film = get_film_by_id($_GET["film"]);
+    $film_name = htmlentities($current_film["film_name"]);
+    $film_id = htmlentities($current_film["id"]);
+    $release_date = htmlentities($current_film["release_date"]);
+    $genre = ($current_film["genre"]);
+    $summary = htmlentities($current_film["summary"]);
+    $wrote = htmlentities(binary_to_words($current_film["wrote"]));
+    $acted = htmlentities(binary_to_words($current_film["acted"]));
+    $directed = htmlentities(binary_to_words($current_film["directed"]));
+    $runtime = htmlentities($current_film["runtime"]);
+    $female_lead = htmlentities($current_film["female_lead"]);
+    $male_lead = htmlentities($current_film["male_lead"]);
+    $quote = htmlentities($current_film["quote"]);
+    $image_location = htmlentities($current_film["image_location"]);
+  }
+}  
+
 function find_selected_film() {
   global $current_film;
   global $film_name;
