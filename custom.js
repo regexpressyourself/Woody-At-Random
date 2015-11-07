@@ -14,14 +14,15 @@
           c.remove("flipped");
           detail.style.display = "none";
           poster.style.display = "";
-          poster.className = "col-md-6";
+          poster.className = "";
           detail.className = "";
         }
         else {
           c.add("flipped");
           detail.style.display = "";
           poster.style.display = "none";
-          detail.className = "col-md-6";
+          detail.style.width = "440px";
+          detail.className = "center-block";
           poster.className = "";
         }
       });

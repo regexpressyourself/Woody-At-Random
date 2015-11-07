@@ -54,42 +54,53 @@
             
           </div>
           <br />
+<div class="row">
+<div class="col-md-12">
+
+<a href="recommend.php" class="btn btn-default"><p>Next Recommendation</p></a>
+</div>
+
+</div>
+
+
+
+            </div>
+          <br />
+            <div class="row">
+              <div class="card effect__click">
+
+                <div class="card__front">
+                  <img id="poster"  src="img/<?php echo $image_location; ?>" alt="film poster" class="card__text" height="650"/>
+                </div>
+
+                <div class="card__back">
+                  <div style="display:none;" id="details" class="card__text">
+                    <div class="img-thumbnail leads-feature">
+<h2>Summary</h2>
+                      <p id="starring-text" ><?php echo $summary; ?></p>
+<h2>Runtime</h2>
+                      <p><?php echo $runtime; ?> minutes</p>
+<h2>Genre</h2>
+                     <p><?php echo $genre; ?></p>
+<h2>Credits</h2>
+    <p><?php echo  write_direct_act_text($wrote, $acted, $directed);?></p>
+                    <p></p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
           <div class="row">
-              <div class="col-md-3 img-thumbnail leads-feature">
-                <h2 id="feature-heading">Starring:</h2>
+              <div class="col-md-12 img-thumbnail leads-feature">
                 <p id="leads-text">
-                  <?php echo $male_lead;?> 
-                  <br />&amp;<br />
-                  <?php echo $female_lead; ?>
+                  <?php echo nl2br($quote); ?>
                 </p>
             </div>
 
-
-
-            <div class="card effect__click">
-              <div class="card__front">
-                <img id="poster"  style="display:;" src="img/<?php echo $image_location; ?>" alt="film poster" class="col-md-6 card__text" width="300"/>
-              </div>
-              <div class="card__back">
-                <div style="display:none;" id="details" class="card__text">
-                  <?php  
-                  echo details_html($wrote, $acted, $directed, $runtime, $genre);
-?>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-3 img-thumbnail summary-feature">
-              <h2 id="feature-heading">Summary:</h2>
-              <p id="starring-text"><?php echo $summary; ?></p>
-            </div>
           </div>
-          <p class="col-md-12"><?php echo nl2br($quote);  ?></p>
-          <br />
 
-
-          <p class="col-md-6"><?php echo $runtime; ?></p>
-          <p class="col-md-6"><?php echo $genre; ?></p>
 
 
       </div>

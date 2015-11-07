@@ -12,7 +12,7 @@ function mysql_prep($string) {
     return $escaped_string;
 }
 
-function find_selected_film_2(){
+function find_selected_film_2($id){
   global $current_film;
   global $film_name;
   global $release_date;
@@ -28,22 +28,20 @@ function find_selected_film_2(){
   global $image_location;
   global $film_id;
 
-  if (isset($_GET["film"])) {
-    $current_film = get_film_by_id($_GET["film"]);
-    $film_name = htmlentities($current_film["film_name"]);
-    $film_id = htmlentities($current_film["id"]);
-    $release_date = htmlentities($current_film["release_date"]);
-    $genre = ($current_film["genre"]);
-    $summary = htmlentities($current_film["summary"]);
-    $wrote = htmlentities(binary_to_words($current_film["wrote"]));
-    $acted = htmlentities(binary_to_words($current_film["acted"]));
-    $directed = htmlentities(binary_to_words($current_film["directed"]));
-    $runtime = htmlentities($current_film["runtime"]);
-    $female_lead = htmlentities($current_film["female_lead"]);
-    $male_lead = htmlentities($current_film["male_lead"]);
-    $quote = htmlentities($current_film["quote"]);
-    $image_location = htmlentities($current_film["image_location"]);
-  }
+  $current_film = get_film_by_id($id);
+  $film_name = htmlentities($current_film["film_name"]);
+  $film_id = htmlentities($current_film["id"]);
+  $release_date = htmlentities($current_film["release_date"]);
+  $genre = ($current_film["genre"]);
+  $summary = htmlentities($current_film["summary"]);
+  $wrote = htmlentities(binary_to_words($current_film["wrote"]));
+  $acted = htmlentities(binary_to_words($current_film["acted"]));
+  $directed = htmlentities(binary_to_words($current_film["directed"]));
+  $runtime = htmlentities($current_film["runtime"]);
+  $female_lead = htmlentities($current_film["female_lead"]);
+  $male_lead = htmlentities($current_film["male_lead"]);
+  $quote = htmlentities($current_film["quote"]);
+  $image_location = htmlentities($current_film["image_location"]);
 }  
 
 function find_selected_film() {
@@ -149,10 +147,11 @@ function generate_random_id() {
   return $random_number;
 }
 
+/*
 function details_html($wrote, $acted, $directed, $runtime, $genre) {
-  $final_html = "<table class='table'>";
+  $final_html = "<h2>Details</h2>";
+  $final_html .= "<table class='table'>";
   $final_html .= "<tr>";
-  $final_html .= "<h2>Details</h2>";
   $final_html .= "</tr>";
   $final_html .= "<tr>";
   $final_html .= "<th colspan='3'>Genre</th>";
@@ -166,7 +165,40 @@ function details_html($wrote, $acted, $directed, $runtime, $genre) {
   $final_html .= "<td colspan='3'>" . $runtime . "</td>";
   $final_html .= "</tr>";
   $final_html .= "<tr>";
-  $final_html .= "<h2>Woody's Involvement</h2>";
+  $final_html .= "</tr>";
+  $final_html .= "<tr>";
+  $final_html .= "<th>Acted?</th>";
+  $final_html .= "<th>Wrote?</th>";
+  $final_html .= "<th>Directed?</th>";
+  $final_html .= "</tr>";
+  $final_html .= "<tr>";
+  $final_html .= "<td>" . $acted . "</td>";
+  $final_html .= "<td>" . $wrote . "</td>";
+  $final_html .= "<td>" . $directed . "</td>";
+  $final_html .= "</tr>";
+  $final_html .= "</table>";
+
+  return $final_html;
+}
+ */
+
+function details_html($wrote, $acted, $directed, $runtime, $genre) {
+  $final_html = "<h2>Details</h2>";
+  $final_html .= "<table class='table'>";
+  $final_html .= "<tr>";
+  $final_html .= "</tr>";
+  $final_html .= "<tr>";
+  $final_html .= "<th colspan='3'>Genre</th>";
+  $final_html .= "</tr>";
+  $final_html .= "<tr>";
+  $final_html .= "<td colspan='3'>" . $genre . "</td>";
+  $final_html .= "</tr>";
+  $final_html .= "<tr>";
+  $final_html .= "<th colspan='3'>Runtime</th>";
+  $final_html .= "</tr>";
+  $final_html .= "<td colspan='3'>" . $runtime . "</td>";
+  $final_html .= "</tr>";
+  $final_html .= "<tr>";
   $final_html .= "</tr>";
   $final_html .= "<tr>";
   $final_html .= "<th>Acted?</th>";
@@ -183,6 +215,52 @@ function details_html($wrote, $acted, $directed, $runtime, $genre) {
   return $final_html;
 }
 
+function write_direct_act_text($wrote, $acted, $directed) {
+  $result = "";
+  //$bool_array = array($wrote => "written by", $acted => "starring", $directed => "directed by");
+  $bool_array = array($wrote, $acted, $directed);
+  $bool_keys= array("written by", "starring", "directed by");
+  $string_array = array();
+  $grammar_array = array();
+
+  $count = count($bool_array);
+
+  for ($i = 0; $i<$count; ++$i) {
+    if ($bool_array[$i] == "Yes") {
+      array_push($string_array, $bool_keys[$i]);
+    }
+  }
+
+  $count = count($string_array);
+
+  for ($i = 0; $i<$count; ++$i) {
+  }
+  
+  if ($count == 2) {
+    array_push($grammar_array, " and ");
+  }
+  else if ($count == 3) {
+    array_push($grammar_array, " , ");
+    array_push($grammar_array, ", and ");
+  }
+
+
+  for ($i = 0; $i<$count; ++$i) {
+    $value=$string_array[$i];
+    if ($i == 0){
+      $result .= ucwords($value[0]);
+      $result .= substr($value, 1);
+    }
+    else {
+      $result .= $value;
+    }
+    $result .= $grammar_array[$i];
+  }
+  $result .= " Woody Allen.";
+
+  return $result;
+  
+}
 function poster_html($image_location) {
   $final_html = "<img src='"; 
   $final_html .= $image_location;
