@@ -57,7 +57,7 @@
 <div class="row">
 <div class="col-md-12">
 
-<a href="recommend.php" class="btn btn-default"><p>Next Recommendation</p></a>
+<a href="recommend.php" class="btn btn-default"><p><b>Next Recommendation</b></p></a>
 </div>
 
 </div>
@@ -73,18 +73,17 @@
                   <img id="poster"  src="img/<?php echo $image_location; ?>" alt="film poster" class="card__text" height="650"/>
                 </div>
 
-                <div class="card__back">
+                <div id="starring-text" class="card__back">
                   <div style="display:none;" id="details" class="card__text">
                     <div class="img-thumbnail leads-feature">
 <h2>Summary</h2>
-                      <p id="starring-text" ><?php echo $summary; ?></p>
+                      <p class="credits"><?php echo $summary; ?></p>
 <h2>Runtime</h2>
-                      <p><?php echo $runtime; ?> minutes</p>
+                      <p class="credits"><?php echo $runtime; ?> minutes</p>
 <h2>Genre</h2>
-                     <p><?php echo $genre; ?></p>
+                     <p class="credits"><?php echo $genre; ?></p>
 <h2>Credits</h2>
-    <p><?php echo  write_direct_act_text($wrote, $acted, $directed);?></p>
-                    <p></p>
+    <p class="credits"><?php echo  write_direct_act_text($wrote, $acted, $directed);?></p>
                     </div>
                   </div>
                 </div>
