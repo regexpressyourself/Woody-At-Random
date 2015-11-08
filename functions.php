@@ -42,6 +42,7 @@ function find_selected_film_2($id){
   $male_lead = htmlentities($current_film["male_lead"]);
   $quote = htmlentities($current_film["quote"]);
   $image_location = htmlentities($current_film["image_location"]);
+  return array(  $current_film,  $film_name,  $release_date,  $genre,  $summary,  $wrote,  $acted,  $directed,  $runtime,  $female_lead,  $male_lead,  $quote,  $image_location,  $film_id);
 }  
 
 function find_selected_film() {
@@ -147,74 +148,6 @@ function generate_random_id() {
   return $random_number;
 }
 
-/*
-function details_html($wrote, $acted, $directed, $runtime, $genre) {
-  $final_html = "<h2>Details</h2>";
-  $final_html .= "<table class='table'>";
-  $final_html .= "<tr>";
-  $final_html .= "</tr>";
-  $final_html .= "<tr>";
-  $final_html .= "<th colspan='3'>Genre</th>";
-  $final_html .= "</tr>";
-  $final_html .= "<tr>";
-  $final_html .= "<td colspan='3'>" . $genre . "</td>";
-  $final_html .= "</tr>";
-  $final_html .= "<tr>";
-  $final_html .= "<th colspan='3'>Runtime</th>";
-  $final_html .= "</tr>";
-  $final_html .= "<td colspan='3'>" . $runtime . "</td>";
-  $final_html .= "</tr>";
-  $final_html .= "<tr>";
-  $final_html .= "</tr>";
-  $final_html .= "<tr>";
-  $final_html .= "<th>Acted?</th>";
-  $final_html .= "<th>Wrote?</th>";
-  $final_html .= "<th>Directed?</th>";
-  $final_html .= "</tr>";
-  $final_html .= "<tr>";
-  $final_html .= "<td>" . $acted . "</td>";
-  $final_html .= "<td>" . $wrote . "</td>";
-  $final_html .= "<td>" . $directed . "</td>";
-  $final_html .= "</tr>";
-  $final_html .= "</table>";
-
-  return $final_html;
-}
- */
-
-function details_html($wrote, $acted, $directed, $runtime, $genre) {
-  $final_html = "<h2>Details</h2>";
-  $final_html .= "<table class='table'>";
-  $final_html .= "<tr>";
-  $final_html .= "</tr>";
-  $final_html .= "<tr>";
-  $final_html .= "<th colspan='3'>Genre</th>";
-  $final_html .= "</tr>";
-  $final_html .= "<tr>";
-  $final_html .= "<td colspan='3'>" . $genre . "</td>";
-  $final_html .= "</tr>";
-  $final_html .= "<tr>";
-  $final_html .= "<th colspan='3'>Runtime</th>";
-  $final_html .= "</tr>";
-  $final_html .= "<td colspan='3'>" . $runtime . "</td>";
-  $final_html .= "</tr>";
-  $final_html .= "<tr>";
-  $final_html .= "</tr>";
-  $final_html .= "<tr>";
-  $final_html .= "<th>Acted?</th>";
-  $final_html .= "<th>Wrote?</th>";
-  $final_html .= "<th>Directed?</th>";
-  $final_html .= "</tr>";
-  $final_html .= "<tr>";
-  $final_html .= "<td>" . $acted . "</td>";
-  $final_html .= "<td>" . $wrote . "</td>";
-  $final_html .= "<td>" . $directed . "</td>";
-  $final_html .= "</tr>";
-  $final_html .= "</table>";
-
-  return $final_html;
-}
-
 function write_direct_act_text($wrote, $acted, $directed) {
   $result = "";
   //$bool_array = array($wrote => "written by", $acted => "starring", $directed => "directed by");
@@ -261,12 +194,22 @@ function write_direct_act_text($wrote, $acted, $directed) {
   return $result;
   
 }
+
+function show_filmography() {
+  $result = "";
+  foreach (range(1,55) as $number) {
+    find_selected_film_2($number);
+    $result .= $film_name;
+  }
+
+  return $result;
+}
+
 function poster_html($image_location) {
   $final_html = "<img src='"; 
   $final_html .= $image_location;
   $final_html .= "' alt='film poster' />";
   return $final_html;
-
 }
 
 

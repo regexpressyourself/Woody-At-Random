@@ -57,7 +57,9 @@
 <div class="row">
 <div class="col-md-12">
 
-<a href="recommend.php" class="btn btn-default"><p><b>Next Recommendation</b></p></a>
+          <p class="lead">
+            <a href="recommend.php" class="btn btn-lg btn-default">Next Recommendation</a>
+          </p>
 </div>
 
 </div>
