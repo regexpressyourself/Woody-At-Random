@@ -53,7 +53,17 @@
           </div>
           <br />
             <div class="row">
-              <table>
+              <table class="table">
+                <tr>
+                  <th>Number</th>
+                  <th>Title</th>
+                  <th>Release Year</th>
+                  <th>Genre</th>
+                  <th>Wrote?</th>
+                  <th>Acted?</th>
+                  <th>Directed?</th>
+                  <th>Runtime</th>
+                </tr>
                 <?php echo show_filmography(); ?>
               </table>
 

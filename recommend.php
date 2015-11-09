@@ -58,7 +58,7 @@
 <div class="col-md-12">
 
           <p class="lead">
-            <a href="recommend.php" class="btn btn-lg btn-default">Next Recommendation</a>
+            <a href="recommend.php" class="btn btn-lg btn-default">New Recommendation</a>
           </p>
 </div>
 
@@ -72,7 +72,7 @@
               <div class="card effect__click">
 
                 <div class="card__front">
-                  <img id="poster"  src="img/<?php echo $image_location; ?>" alt="film poster" class="card__text" height="650"/>
+                  <img id="poster"  src="img/<?php echo $image_location; ?>" alt="film poster" class="card__text center-block" />
                 </div>
 
                 <div id="starring-text" class="card__back">

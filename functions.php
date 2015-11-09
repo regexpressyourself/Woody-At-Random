@@ -12,7 +12,7 @@ function mysql_prep($string) {
     return $escaped_string;
 }
 
-function find_selected_film_2($id){
+function find_selected_film_as_array($id){
   global $current_film;
   global $film_name;
   global $release_date;
@@ -32,7 +32,7 @@ function find_selected_film_2($id){
   $film_name = htmlentities($current_film["film_name"]);
   $film_id = htmlentities($current_film["id"]);
   $release_date = htmlentities($current_film["release_date"]);
-  $genre = ($current_film["genre"]);
+  $genre = ucwords(($current_film["genre"]));
   $summary = htmlentities($current_film["summary"]);
   $wrote = htmlentities(binary_to_words($current_film["wrote"]));
   $acted = htmlentities(binary_to_words($current_film["acted"]));
@@ -42,7 +42,7 @@ function find_selected_film_2($id){
   $male_lead = htmlentities($current_film["male_lead"]);
   $quote = htmlentities($current_film["quote"]);
   $image_location = htmlentities($current_film["image_location"]);
-  return array(  $current_film,  $film_name,  $release_date,  $genre,  $summary,  $wrote,  $acted,  $directed,  $runtime,  $female_lead,  $male_lead,  $quote,  $image_location,  $film_id);
+  return array(  $film_id, $film_name,  $release_date,  $genre, $wrote,  $acted,  $directed,  $runtime);
 }  
 
 function find_selected_film() {
@@ -64,7 +64,7 @@ function find_selected_film() {
     $current_film = get_film_by_id($_GET["film"]);
     $film_name = htmlentities($current_film["film_name"]);
     $release_date = htmlentities($current_film["release_date"]);
-    $genre = ($current_film["genre"]);
+    $genre = ucwords(($current_film["genre"]));
     $summary = htmlentities($current_film["summary"]);
     $wrote = htmlentities(binary_to_words($current_film["wrote"]));
     $acted = htmlentities(binary_to_words($current_film["acted"]));
@@ -166,15 +166,15 @@ function write_direct_act_text($wrote, $acted, $directed) {
 
   $count = count($string_array);
 
-  for ($i = 0; $i<$count; ++$i) {
-  }
-  
   if ($count == 2) {
     array_push($grammar_array, " and ");
+    array_push($grammar_array, "");
+    array_push($grammar_array, "");
   }
   else if ($count == 3) {
-    array_push($grammar_array, " , ");
+    array_push($grammar_array, ", ");
     array_push($grammar_array, ", and ");
+    array_push($grammar_array, "");
   }
 
 
@@ -195,11 +195,26 @@ function write_direct_act_text($wrote, $acted, $directed) {
   
 }
 
+function make_table_data($data) {
+  $result = "<td>";
+  $result .= $data;
+  $result .= "</td>";
+  return $result;
+}
+
 function show_filmography() {
   $result = "";
   foreach (range(1,55) as $number) {
-    find_selected_film_2($number);
-    $result .= $film_name;
+    $film_info_array = find_selected_film_as_array($number);
+    $result .= "<tr class='clickable-row' data-href='recommend.php?film=";
+    $result .= $number . "'>";
+    foreach ( $film_info_array as $item) {
+      $result .= "<td>";
+      $result .= $item;
+      $result .= "</td>";
+    }
+    $result .= "</tr>";
+
   }
 
   return $result;

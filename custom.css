@@ -161,8 +161,7 @@ body {
   }
 }
 
-#film_name {
-}
+
 .form-group {
   padding-left: 5%;
   padding-right: 5%;
@@ -243,3 +242,9 @@ th {
   box-shadow: none;
 }
 
+#poster {
+  //max-height:650px;
+  height:auto;
+  max-width:420px;
+  display:block;
+}

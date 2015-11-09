@@ -14,17 +14,22 @@
           c.remove("flipped");
           detail.style.display = "none";
           poster.style.display = "";
-          poster.className = "";
+          poster.className = "center-block";
           detail.className = "";
         }
         else {
           c.add("flipped");
           detail.style.display = "";
           poster.style.display = "none";
-          detail.style.width = "440px";
+          detail.style.width = "420px";
           detail.className = "center-block";
           poster.className = "";
         }
       });
     }
 })();
+jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+    });
+});
