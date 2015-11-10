@@ -117,7 +117,11 @@
   <script src="bootstrap/js/bootstrap.min.js"></script>
   <script src="custom.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<<<<<<< HEAD
   <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.16/dist/jquery.flip.min.js"></script>
+=======
+  <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.16/dist/jquery.flip.min.js"</script>>
+>>>>>>> b6fbee266803a7a618e95155c81dbf29f3ca615e
 </body>
 
 </html>
