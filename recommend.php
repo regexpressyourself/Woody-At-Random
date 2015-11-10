@@ -72,7 +72,7 @@
               <div class="card effect__click">
 
                 <div class="card__front">
-                  <img id="poster"  src="img/<?php echo $image_location; ?>" alt="film poster" class="card__text center-block" />
+                  <img id="poster"  src="img/<?php echo $image_location; ?>" alt="poster for <?php echo $film_name; ?>" class="card__text center-block" />
                 </div>
 
                 <div id="starring-text" class="card__back">
@@ -108,7 +108,6 @@
 
     </div>
 
-  </div>
 
 
 
@@ -117,8 +116,8 @@
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="bootstrap/js/bootstrap.min.js"></script>
   <script src="custom.js"></script>
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js">
-  <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.16/dist/jquery.flip.min.js">
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.16/dist/jquery.flip.min.js"></script>
 </body>
 
 </html>

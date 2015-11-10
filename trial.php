@@ -1,7 +1,5 @@
 <?php require_once("db_connection.php"); ?>
 <?php include("functions.php"); ?>
-<?php find_selected_film_2(23); ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +13,7 @@
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="custom.css" rel="stylesheet">
+    <link href="flip.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,6 +24,7 @@
   </head>
 
   <body>
+
     <div class="site-wrapper">
 
       <div class="site-wrapper-inner">
@@ -32,27 +32,15 @@
         <div class="cover-container">
 
 
-          <div class="inner cover"></div>
-
-<p>Wrote? <?php echo $wrote; ?></p>
-<p>Acted? <?php echo $acted; ?></p>
-<p>Directed? <?php echo $directed; ?></p>
-    <p><?php echo  write_direct_act_text($wrote, $acted, $directed);?></p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-  </body>
-
-</html>
+          <div class="masthead clearfix">
+            <div class="inner">
+              <a href="index.php"><h3 class="masthead-brand">Woody At Random</h3></a>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li><a href="index.php">Home</a></li>
+                  <li><a href="recommend.php">Random Recommendation</a></li>
+                  <li><a href="filmography.php">Filmography</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>

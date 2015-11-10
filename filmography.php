@@ -11,7 +11,7 @@
           <title>Woody Allen Filmography</title>
 
           <!-- Bootstrap -->
-          <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+          <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
             <link href="custom.css" rel="stylesheet">
             <link href="flip.css" rel="stylesheet">
 
@@ -53,19 +53,21 @@
           </div>
           <br />
             <div class="row">
-              <table class="table">
-                <tr>
-                  <th>Number</th>
-                  <th>Title</th>
-                  <th>Release Year</th>
-                  <th>Genre</th>
-                  <th>Wrote?</th>
-                  <th>Acted?</th>
-                  <th>Directed?</th>
-                  <th>Runtime</th>
-                </tr>
-                <?php echo show_filmography(); ?>
-              </table>
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <tr>
+                    <th>Number</th>
+                    <th>Title</th>
+                    <th>Release Year</th>
+                    <th>Genre</th>
+                    <th>Wrote?</th>
+                    <th>Acted?</th>
+                    <th>Directed?</th>
+                    <th>Runtime<br />(Minutes)</th>
+                  </tr>
+                  <?php echo show_filmography(); ?>
+                </table>
+              </div>
 
             </div>
 
@@ -83,8 +85,8 @@
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="bootstrap/js/bootstrap.min.js"></script>
   <script src="custom.js"></script>
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js">
-  <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.16/dist/jquery.flip.min.js">
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://cdn.rawgit.com/nnattawat/flip/v1.0.16/dist/jquery.flip.min.js"></script>
 </body>
 
 </html>
