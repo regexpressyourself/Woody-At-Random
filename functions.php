@@ -214,11 +214,10 @@ function show_filmography() {
       $result .= "</td>";
     }
     $result .= "</tr>";
-
   }
-
   return $result;
 }
+
 
 function poster_html($image_location) {
   $final_html = "<img src='"; 
