@@ -51,49 +51,51 @@
           <div class="clearfix">
             
           </div>
-          <div class="row">
-            <div class="card effect__click">
-
-              <div class="card__front">
-                <div class="btn btn-lg btn-default card__text">Refine Search</div>
-              </div>
-
-              <div class="card__back">
-              <div class="card__text">
-                <form action="refine-search.php" method="post">
-                  <label for="genre">Genre</label>
-                  <select name="genre" id="genre">
-                    <option>Comedy</option>
-                    <option>Adventure</option>
-                    <option>Crime</option>
-                    <option>Romance</option>
-                    <option>Scifi</option>
-                    <option>War</option>
-                    <option>Drama</option>
-                    <option>Fantasy</option>
-                    <option>Mystery</option>
-                    <option>Music</option>
-                    <option>Thriller</option>
-                  </select>
+                <div id="refine-button" onclick="showForm()" class="btn btn-lg btn-default card__text">Refine Search</div>
+              <div style="display: none;"id="film-form">
+                <form class="form-control" action="refine-search.php" method="post">
+                  <div class="form-group">
+                    <label for="genre">Genre</label>
+                    <select name="genre" id="genre">
+                      <option>Any</option>
+                      <option>Comedy</option>
+                      <option>Adventure</option>
+                      <option>Crime</option>
+                      <option>Romance</option>
+                      <option>Scifi</option>
+                      <option>War</option>
+                      <option>Drama</option>
+                      <option>Fantasy</option>
+                      <option>Mystery</option>
+                      <option>Music</option>
+                      <option>Thriller</option>
+                    </select>
+                  </div>
                   <br />
                   <label for="written">Written by Allen?</label>
-                  <input type="radio" name="written" id="written-yes" value="written-yes" /> Yes
-                  <input type="radio" name="written" id="written-no" value="written-no" /> No
+                  <select name="written" id="written">
+                    <option>Either</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                  </select>
                   <br />
                   <label for="directed">Directed by Allen?</label>
-                  <input type="radio" name="directed" id="directed-yes" value="directed-yes" /> Yes
-                  <input type="radio" name="directed" id="directed-no" value="directed-no" /> No
+                  <select name="directed" id="directed">
+                    <option>Either</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                  </select>
                   <br />
                   <label for="acted">Starring Allen?</label>
-                  <input type="radio" name="acted" id="acted-yes" value="acted-yes" /> Yes
-                  <input type="radio" name="acted" id="acted-no" value="acted-no" /> No
+                  <select name="acted" id="acted">
+                    <option>Either</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                  </select>
                   
                 </form>
-              </div>
-              </div>
 
             </div>
-          </div>
         
           <br />
             <div class="row">
