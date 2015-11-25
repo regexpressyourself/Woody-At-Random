@@ -48,59 +48,66 @@
           <div id="film_name">
             <h1 >Woody Allen Filmography</h1>
           </div>
-          <div class="clearfix">
-            
-          </div>
-                <div id="refine-button" onclick="showForm()" class="btn btn-lg btn-default card__text">Refine Search</div>
-              <div style="display: none;"id="film-form">
-                <form class="form-control" action="refine-search.php" method="post">
-                  <div class="form-group">
-                    <label for="genre">Genre</label>
-                    <select name="genre" id="genre">
-                      <option>Any</option>
-                      <option>Comedy</option>
-                      <option>Adventure</option>
-                      <option>Crime</option>
-                      <option>Romance</option>
-                      <option>Scifi</option>
-                      <option>War</option>
-                      <option>Drama</option>
-                      <option>Fantasy</option>
-                      <option>Mystery</option>
-                      <option>Music</option>
-                      <option>Thriller</option>
-                    </select>
-                  </div>
-                  <br />
-                  <label for="written">Written by Allen?</label>
-                  <select name="written" id="written">
-                    <option>Either</option>
-                    <option>Yes</option>
-                    <option>No</option>
+          <div class="clearfix"></div>
+          <div class="row">
+            <div id="refine-button" onclick="showForm()" class="btn btn-lg btn-default ">Refine Search</div>
+            <div id="film-form" style="display:none;">
+              <form class="form-inline" action="refine-search.php" method="post">
+                <div class="form-group">
+                  <label for="genre">Genre</label>
+                  <select class="form-control" onchange="adjustTable()" name="genre" id="genre">
+                    <option selected value="any">Any</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="Crime">Crime</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Scifi">Scifi</option>
+                    <option value="War">War</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Music">Music</option>
+                    <option value="Thriller">Thriller</option>
                   </select>
-                  <br />
-                  <label for="directed">Directed by Allen?</label>
-                  <select name="directed" id="directed">
-                    <option>Either</option>
-                    <option>Yes</option>
-                    <option>No</option>
-                  </select>
-                  <br />
-                  <label for="acted">Starring Allen?</label>
-                  <select name="acted" id="acted">
-                    <option>Either</option>
-                    <option>Yes</option>
-                    <option>No</option>
-                  </select>
-                  
-                </form>
+                </div>
+                <br />
+                <br />
 
+                <div class="form-group">
+                  <label for="written">Written by Allen?</label>
+                  <select class="form-control" name="written" onchange="adjustTable()" id="written">
+                    <option selected value="either">Either</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="acted">Starring Allen?</label>
+                  <select class="form-control" name="acted" onchange="adjustTable()" id="acted">
+                    <option selected value="either">Either</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="directed">Directed by Allen?</label>
+                  <select class="form-control" onchange="adjustTable()" name="directed" id="directed">
+                    <option selected value="either">Either</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+              </form>
             </div>
-        
+          </div>
+
+          <div class="clearfix"></div>
+
           <br />
+
             <div class="row">
               <div class="table-responsive">
-                <table class="table table-hover">
+                <table id="filmography-table" class="table table-hover">
                   <tr>
                     <th>Number</th>
                     <th>Title</th>

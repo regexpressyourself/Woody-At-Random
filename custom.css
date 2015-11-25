@@ -1,6 +1,4 @@
-/*
- *  * Globals
- *   */
+/* Globals */
 
 /* Links */
 a,
@@ -20,9 +18,7 @@ a:hover {
 }
 
 
-/*
- *  * Base structure
- *   */
+ /* Base structure */
 
 html,
 body {
@@ -59,9 +55,7 @@ body {
 }
 
 
-/*
- *  * Header
- *   */
+/* Header */
 .masthead {
   background-color: #333;
 }
@@ -108,9 +102,7 @@ body {
 }
 
 
-/*
- *  * Cover
- *   */
+/* Cover */
 
 .cover {
   padding: 0 20px;
@@ -121,9 +113,7 @@ body {
 }
 
 
-/*
- *  * Footer
- *   */
+/* Footer */
 
 .mastfoot {
   color: #999; /* IE8 proofing */
@@ -131,9 +121,7 @@ body {
 }
 
 
-/*
- *  * Affix and center
- *   */
+/* Affix and center */
 
 @media (min-width: 768px) {
   /* Pull out the header and footer */
@@ -248,3 +236,9 @@ th {
   max-width:420px;
   display:block;
 }
+
+@-moz-document url-prefix() {
+  // fix for Bootstrap's table-responsive on Firefox
+  fieldset { display: table-cell; }
+}
+
