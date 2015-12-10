@@ -242,8 +242,8 @@ function write_direct_act_text($wrote, $acted, $directed) {
 }
 
 function create_table_item($film_info_array, $number) {
-  $result = "<tr class='clickable-row' data-href='recommend.php?film=";
-  $result .= $number . "'>";
+  $result = "<tr onclick='document.location = \"recommend.php?film=";
+  $result .= $number . "\"';>";
   foreach ( $film_info_array as $item) {
     $result .= "<td>";
     $result .= $item;
