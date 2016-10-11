@@ -1,9 +1,13 @@
 #Woody At Random
-##woodyatrandom.com
 
-This is the code for a data-driven site I recently deployed. It was a combination of a way to practice my PHP, and to make something I would actually use. Love me some Woody!
+Woody At Random is designed to randomly recommend Woody Allen films, showcasing posters, quotes, cast, etc.
+
+The site also features a full table, for easy selection.
+
+## Tech
+
+Woody At Random uses Linux, Apache, PHP, and MySQL to handle data. The front end is HTML, CSS, JavaScript, jQuery, and Twitter Bootstrap.
+
 
 You can find the site at <a href="http://woodyatrandom.com/">woodyatrandom.com</a>.
 
-
-Enjoy!
