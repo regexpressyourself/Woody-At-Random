@@ -1,4 +1,6 @@
-#Woody At Random
+<img alt="Woody At Random" src="https://regexpressyourself.github.io/public/woody.png" width="400px"/>
+
+_A responsive Woody Allen recommendation website_
 
 Woody At Random is designed to randomly recommend Woody Allen films, showcasing posters, quotes, cast, etc.
 
